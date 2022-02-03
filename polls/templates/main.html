@@ -1,0 +1,11 @@
+<!--현재 투표 진행중인 10가지 정도의 실시간 투표 현황-->
+
+<a href="{% url 'start_page' %}">홈화면으로(로고)</a><br>
+
+{% for v in vote %}
+    <br><br>
+    {% for c in v.choice_set.all %}
+    <label for="c{{ forloop.counter }}"> {{c.name}} : {{ c.count }}</label>
+    {% endfor %} 
+    
+{% endfor %}

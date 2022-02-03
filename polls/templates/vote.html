@@ -1,0 +1,16 @@
+<!--투표 진행화면-->
+<form action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
+                                
+{% for v in vote %}
+
+    {% for c in v.choice_set.all %}
+    <br>
+    <input type="radio" name="choice{{v.id}}" id="c{{ forloop.counter }}" value="{{ c.id }}"/>
+    <label for="c{{ forloop.counter }}"> {{ c.name }}</label> <br/>
+    {% endfor %} 
+    ____________________________
+
+{% endfor %}
+<br>
+<input type="submit" value="투표하기"/>
+</form>
