@@ -18,7 +18,7 @@
 
 - **3) 에 대한 이미지 첨부**
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d5d6c098-a131-4d18-aa9a-f81d086ec09b/Untitled.png)
+   ![image](https://user-images.githubusercontent.com/76711238/152401741-f91a257a-f562-41c0-bf2a-f50463fbadaa.png)
     
 
 4) `pull request`  만들어서 올려주기! 
@@ -27,11 +27,11 @@
     
     **base가 디폴트로 main으로 되어있을텐데**
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/67a014b8-0782-4870-9f77-9b29e5f995d1/Untitled.png)
+    ![image](https://user-images.githubusercontent.com/76711238/152401647-372063d5-49f3-4525-b333-e773143cce96.png)
     
     - 아래와 같이 눌러서 fe, be 브랜치로 변경해주어야 해용~~!! (dev는 be,fe 작업 마무리되면 합칠공간!!)
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b0945387-6467-4203-87bb-a1c8a5253031/Untitled.png)
+    ![image](https://user-images.githubusercontent.com/76711238/152401700-9fca7ece-4cce-473c-8a28-5216a818e2b1.png)
     
 
 5) `pull request` 온 부분을 상대방이 읽어주고 의문점, 발견한 에러 같은 것 리뷰해주고 → pr 보낸 분이 해당 부분 답변, 수정하고 → `squash and merge` !! ~~
