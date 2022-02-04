@@ -60,9 +60,12 @@ def vote(request):
         #2) 주류 항목인 애들 고르기& 유저가 택한 값 중에서 주류인 것 판별 (user_type으로 주류 선택한 것 갯수)
 
         user_type = 0
-        for k in range(1, total_question_number//2 + 1) :
+        for k in range(1, total_question_number*2,2) :
             if is_powerful(Choice.objects.get(id=k), Choice.objects.get(id=k+1)): #id=k가 주류인 경우
-                if (voted_choice_id[k-1]==k) :
+                if (voted_choice_id[k//2]==k) :
+                    user_type+=1
+            else :
+                if (voted_choice_id[k//2]==k+1):
                     user_type+=1
 
         #3) user_type (주류 갯수 고른 것) 따라서 type 정해줌 (총 4 type 종류 있음)
@@ -75,6 +78,7 @@ def vote(request):
             user_type_num = 3
         else : user_type_num = 4     
 
+        print("타입넘" , user_type_num , "//" , "주류선택갯수", user_type)
     return render(request, 'vote_complete.html', {'user_type_num' : user_type_num})
 
 
