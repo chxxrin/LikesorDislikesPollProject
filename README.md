@@ -1,3 +1,7 @@
+# git clone -b dev <remote_repo>
+
+
+
 # Git 브랜치 두개로 나눠서 작업합시다! 😎
 - 그리고 기능 만들 때는 각자 브랜치 만들어서 (브랜치명은 프론트면 `fe/기능명` , 백이면 `be/기능명` 정도로만..) 작업하고
 `git push origin 자신의브랜치이름` 으로 pull request 만든 다음에 이 pull request가 `dev`로 향하도록 설정해주면 됩니다!!
