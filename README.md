@@ -1,8 +1,12 @@
 
 # 실행하기
 1) git clone -b dev https://github.com/LikelionSideProj/vs
- 2) migrate 하고 createsuperuser 만든 다음 admin 페이지에서 Vote 모델 10개 (우리가 보여줄 질문의 갯수-이름은 상관 x 걍 번호로 붙이는 것도 상관 없어용 ㅎㅎ)
- 3) Choice 모델 만들 때 한 Vote 당 2개의 Choice 가 존재할 수 있도록 만들어주면 됩니당!
+2) cd vs
+3) pip install -r requirements.txt
+4) python manage.py migrate => runserver
+
+-> admin 페이지에서 Vote 모델 10개 (우리가 보여줄 질문의 갯수-이름은 상관 x 걍 번호로 붙이는 것도 상관 없어용 ㅎㅎ)
+-> Choice 모델 만들 때 한 Vote 당 2개의 Choice 가 존재할 수 있도록 만들어주면 됩니당!
 - 아래와 같이 Choice 만들 때 얘가 속할 Vote 선택해주면 됩니당 ! 1번 질문에 민초 vs 반민초 를 하고 싶으니깐 1번 vote를 외래키로 가지는 choice 모델 두개 (민초, 반민초) 를 만들어주면 되겠죵!?
 
 ![image](https://user-images.githubusercontent.com/76711238/152468763-17c1fea1-4e57-41b7-9291-ef83b40663da.png)
