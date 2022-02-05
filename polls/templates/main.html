@@ -4,8 +4,9 @@
 
 {% for v in vote %}
     <br><br>
-    {% for c in v.choice_set.all %}
-    <label for="c{{ forloop.counter }}"> {{c.name}} : {{ c.count }}</label>
-    {% endfor %} 
-    
+
+    {{v.choice_set.all.0}} : {{v.choice_set.all.0.count}} vs
+    {{v.choice_set.all.1}} : {{v.choice_set.all.1.count}}
+
+
 {% endfor %}
