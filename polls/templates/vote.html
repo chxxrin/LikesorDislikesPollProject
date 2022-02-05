@@ -2,19 +2,17 @@
 <form action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
 
 {% for v in vote %}
-
     {% for c in v.choice_set.all %}
     <br>
     {% if c.id in answered %}
-        <input type="radio" name="choice{{v.id}}" id="c{{ forloop.counter }}" value="{{ c.id }}" checked/>
-        <label for="c{{ forloop.counter }}"> {{ c.name }}</label> <br/>
+        <input type="radio" name="choice{{v.id}}" id="c{{ c.id }}" value="{{ c.id }}" checked/>
+        <label for="c{{ c.id }}"> {{ c.name }}</label> <br/>
     {% else %}
-        <input type="radio" name="choice{{v.id}}" id="c{{ forloop.counter }}" value="{{ c.id }}"/>
-        <label for="c{{ forloop.counter }}"> {{ c.name }}</label> <br/>
+        <input type="radio" name="choice{{v.id}}" id="c{{ c.id }}" value="{{ c.id }}"/>
+        <label for="c{{ c.id }}"> {{ c.name }}</label> <br/>
     {% endif %}
     {% endfor %} 
     ____________________________
-
 {% endfor %}
 <br>
 <input type="submit" value="투표하기"/>
