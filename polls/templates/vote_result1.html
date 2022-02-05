@@ -27,9 +27,10 @@ _______________________________________
 
 <!-- sns 공유 버튼 -->
 
-<a href="javascript:shareTwitter();">트위터</a>
-<a href="javascript:shareFacebook();">페이스북</a>    
-<a href="javascript:shareKakao();">카카오톡</a>   
+
+<a id="btnTwitter" class="link-icon twitter" href="javascript:shareTwitter();">트위터</a>
+<a id="btnFacebook" class="link-icon facebook" href="javascript:shareFacebook();">페이스북</a>    
+<a id="btnKakao" class="link-icon kakao" href="javascript:shareKakao();">카카오톡</a>    
 _______________________________________<br>
 <a href="{% url 'main_page' %}">실시간 투표 현황 보러가기</a><br>
 
@@ -49,7 +50,9 @@ _______________________________________<br>
     
     
     function shareKakao() {
-    Kakao.init('0d9af30db343d4e71f650e9ad9067c58');
+      if (Kakao==null) {
+            Kakao.init('0d9af30db343d4e71f650e9ad9067c58');
+        };
      // 카카오링크 버튼 생성
      Kakao.Link.createDefaultButton({
        container: '#btnKakao', // 카카오공유버튼ID
