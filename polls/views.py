@@ -7,12 +7,16 @@ total_question_number = 10 # 총 질문의 갯수
 
 def is_powerful(opt1, opt2) :
     if (opt1.count > opt2.count) :
-        opt1.powerful = 1
-        opt2.powerful = 0
+        opt1.powerful = True
+        opt2.powerful = False
+        opt1.save()
+        opt2.save()
         return 1
     else :
-        opt1.powerful = 0
-        opt2.powerful = 1
+        opt1.powerful = False
+        opt2.powerful = True
+        opt1.save()
+        opt2.save()
         return 0
 
 
@@ -76,12 +80,26 @@ def vote(request):
             user_type_num = 2
         elif user_type <= 7 :
             user_type_num = 3
-        else : user_type_num = 4     
+        else : user_type_num = 4
 
-        print("타입넘" , user_type_num , "//" , "주류선택갯수", user_type)
-    return render(request, 'vote_complete.html', {'user_type_num' : user_type_num})
+        #4) 내가 선택한 아이디값
+
+        v1=voted_choice_id[0]
+        v2=voted_choice_id[1]
+        v3=voted_choice_id[2]
+        v4=voted_choice_id[3]
+        v5=voted_choice_id[4]
+        v6=voted_choice_id[5]
+        v7=voted_choice_id[6]
+        v8=voted_choice_id[7]
+        v9=voted_choice_id[8]
+        v10=voted_choice_id[9]
+     
+    return render(request, 'vote_complete.html',{'user_type_num' : user_type_num, 'v1':v1, 'v2':v2, 'v3':v3, 'v4':v4, 'v5':v5, 'v6':v6, 'v7':v7, 'v8':v8, 'v9' :v9, 'v10' : v10 })
 
 
-def vote_result(request, type_pk) : 
-    return render(request, f'vote_result{type_pk}.html')
-
+def vote_result(request, type_pk, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10) : 
+    final_choice_list=[]
+    for i in [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]:
+        final_choice_list.append(Choice.objects.get(id=i))
+    return render(request, f'vote_result{type_pk}.html', {'final_choice_list' : final_choice_list})
