@@ -109,11 +109,11 @@ def vote(request):
             v9=voted_choice_id[8]
             v10=voted_choice_id[9]
      
-            return render(request, 'vote_complete.html',{'user_type_num' : user_type_num, 'v1':v1, 'v2':v2, 'v3':v3, 'v4':v4, 'v5':v5, 'v6':v6, 'v7':v7, 'v8':v8, 'v9' :v9, 'v10' : v10 })
+            return render(request, 'vote_complete.html',{'user_type_num' : user_type_num, 'user_type':user_type, 'v1':v1, 'v2':v2, 'v3':v3, 'v4':v4, 'v5':v5, 'v6':v6, 'v7':v7, 'v8':v8, 'v9' :v9, 'v10' : v10 })
 
 
-def vote_result(request, type_pk, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10) : 
+def vote_result(request, type_pk, user_type, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10) : 
     final_choice_list=[]
     for i in [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]:
         final_choice_list.append(Choice.objects.get(id=i))
-    return render(request, f'vote_result{type_pk}.html', {'final_choice_list' : final_choice_list, 'c1':c1,'c2':c2, 'c3':c3, 'c4':c4, 'c5':c5, 'c6':c6, 'c7':c7, 'c8':c8, 'c9':c9, 'c10':c10})
+    return render(request, 'vote_result.html', {'type_pk':type_pk, 'user_type':user_type, 'final_choice_list' : final_choice_list, 'c1':c1,'c2':c2, 'c3':c3, 'c4':c4, 'c5':c5, 'c6':c6, 'c7':c7, 'c8':c8, 'c9':c9, 'c10':c10})
