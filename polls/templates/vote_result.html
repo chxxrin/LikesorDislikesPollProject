@@ -13,9 +13,8 @@
 {% else %}
     <p>주류 항목 {{user_type}}개를 고른 당신은 완전 주류 인간입니다.</p>
 {% endif %}
-<a href="{% url 'main_page' %}">실시간 투표 현황 보러가기</a><br>
+______________________________________
 
-_______________________________________
 <br><br><선택한 항목은 아래와 같습니다><br>
 {% for i in final_choice_list %}
     {% if i.powerful %}
@@ -26,7 +25,6 @@ _______________________________________
 {% endfor %}<br>
 
 <!-- sns 공유 버튼 -->
-
 
 <a id="btnTwitter" class="link-icon twitter" href="javascript:shareTwitter();">트위터</a>
 <a id="btnFacebook" class="link-icon facebook" href="javascript:shareFacebook();">페이스북</a>    
