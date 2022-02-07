@@ -23,3 +23,19 @@
     {{ message }}
 {% endfor %}
 </form>
+
+
+
+<script>
+
+// 쿠키 생성 함수
+function setCookie(cName, cValue, cDay){
+var expire = new Date();
+expire.setDate(expire.getFullYear() + cDay);
+cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
+if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+document.cookie = cookies;
+}
+
+setCookie("isVoted", 'true', 300)
+</script>

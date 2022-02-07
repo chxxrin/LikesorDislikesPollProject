@@ -3,3 +3,19 @@
 투표가 완료되었습니다<br>
 
 <a href="{% url 'vote_result' type_pk=user_type_num user_type=user_type c1=v1 c2=v2 c3=v3 c4=v4 c5=v5 c6=v6 c7=v7 c8=v8 c9=v9 c10=v10 %}">결과 보러가기</a>
+<script>
+    // 쿠키 가져오는 함수
+    function getCookie(cookieName){
+    var cookieValue=null;
+    if(document.cookie){
+        var array=document.cookie.split((escape(cookieName)+'='));
+        if(array.length >= 2){
+            var arraySub=array[1].split(';');
+            cookieValue=unescape(arraySub[0]);
+        }
+    }
+    return cookieValue;
+}
+    console.log(getCookie("isVoted"))
+</script>
+
