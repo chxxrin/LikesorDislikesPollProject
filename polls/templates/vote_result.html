@@ -1,8 +1,13 @@
 <!--투표 완료 후 주류, 비주류 인간 타입 show-->
+{% load static %}
 <head>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="{% static 'js/html2canvas.js' %}"></script>
 </head>
 
+<!-- myresult 안의 영역이 결과화면 이미지로 변환됨 -->
+<div id="myresult">
 <a href="{% url 'start_page' %}">홈화면으로(로고)</a><br>
 {% if type_pk == 1 %}
     <p>주류 항목 {{user_type}}개를 고른 당신은 비주류 인간입니다.</p>
@@ -23,12 +28,13 @@ ______________________________________
     <br>{{i}}<br>  <!--주류인 항목 아니라면 다르게 표시하도록 : 우선은 얇은 글씨로 표현되게해놓았음-->
     {% endif %}
 {% endfor %}<br>
-
+</div> <!-- 여기까지 이미지 변환 -->
 <!-- sns 공유 버튼 -->
 
 <a id="btnTwitter" class="link-icon twitter" href="javascript:shareTwitter();">트위터</a>
 <a id="btnFacebook" class="link-icon facebook" href="javascript:shareFacebook();">페이스북</a>    
 <a id="btnKakao" class="link-icon kakao" href="javascript:shareKakao();">카카오톡</a>     
+<a class="hover" href='javascript:void(0);' onclick="PrintDiv($('#myresult'));">이미지로 저장</a>
 <br>_______________________________________<br>
 <a href="{% url 'main_page' %}">실시간 투표 현황 보러가기</a><br>
 
@@ -67,6 +73,22 @@ ______________________________________
          }
        }
      });
+    }
+    
+    function PrintDiv(div){
+        div = div[0]
+        html2canvas(div).then(function(canvas){
+            var myImage = canvas.toDataURL();
+            downloadURI(myImage, "전국민대결끝판왕.png") // 저장될 사진명
+        });
+    }
+
+    function downloadURI(uri, name){
+        var link = document.createElement("a")
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
     }
     
     </script>
