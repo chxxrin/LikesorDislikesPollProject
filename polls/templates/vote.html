@@ -1,16 +1,41 @@
 <!--투표 진행화면-->
 <form action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
-                                
-{% for v in vote %}
 
+{% for v in vote %}
     {% for c in v.choice_set.all %}
     <br>
-    <input type="radio" name="choice{{v.id}}" id="c{{ forloop.counter }}" value="{{ c.id }}"/>
-    <label for="c{{ forloop.counter }}"> {{ c.name }}</label> <br/>
+    {% if c.id in answered %} <!-- 이전에 체크해놓은 항목은 다시 표시해줌 -->
+        <input type="radio" name="choice{{v.id}}" id="c{{ c.id }}" value="{{ c.id }}" checked/>
+        <label for="c{{ c.id }}"> {{ c.name }}</label> <br/>
+    {% else %} <!-- 체크한적 없는 항목은 빈칸으로 -->
+        <input type="radio" name="choice{{v.id}}" id="c{{ c.id }}" value="{{ c.id }}"/>
+        <label for="c{{ c.id }}"> {{ c.name }}</label> <br/>
+    {% endif %}
     {% endfor %} 
     ____________________________
-
 {% endfor %}
 <br>
 <input type="submit" value="투표하기"/>
+
+<!-- '모든 항목에 투표해주세요' 에러메세지 뜨는 부분 -->
+{% for message in messages %}
+    {{ message.tag }}
+    {{ message }}
+{% endfor %}
 </form>
+
+
+
+<script>
+
+// 쿠키 생성 함수
+function setCookie(cName, cValue, cDay){
+var expire = new Date();
+expire.setDate(expire.getFullYear() + cDay);
+cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
+if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+document.cookie = cookies;
+}
+
+setCookie("isVoted", 'true', 300)
+</script>
