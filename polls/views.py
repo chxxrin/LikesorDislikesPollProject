@@ -9,18 +9,19 @@ total_question_number = 10 # 총 질문의 갯수
 
 
 def is_powerful(opt1, opt2) :
-    if (opt1.count > opt2.count) :
+    if (opt1.count == opt2.count) :
+        opt1.powerful=opt2.powerful=True
+        
+    elif (opt1.count > opt2.count) :
         opt1.powerful = True
         opt2.powerful = False
-        opt1.save()
-        opt2.save()
         return 1
     else :
         opt1.powerful = False
         opt2.powerful = True
-        opt1.save()
-        opt2.save()
         return 0
+    opt1.save()
+    opt2.save()
 
 
 def start_page(request) :
