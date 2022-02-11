@@ -63,6 +63,7 @@ def vote(request):
                 not_answered.append(int(j)) # 투표 안한 항목 번호
             else:
                 voted_choice_id.append(int(request.GET[f'choice{j}']))
+                #name 인 아이를 골라서 value를 가져온다.
 
         if(len(not_answered) != 0): # 투표 다 안한 경우
             messages.warning(request, "모든 항목에 투표해주세요.")
