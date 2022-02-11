@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@keyframes bomb {
+    from{width:500%;}  
+    to{width:700px}  
+}
+/* @keyframes textColor1 {
+    0%{color:white;}
+    70%{color:#F7F7F4;} 
+    100%{color:rgb(0, 0, 0);}  
+}
+@keyframes textColor2 {
+    0%{color:white;}
+    70%{color:#F7F7F4;} 
+    100%{color:rgb(0, 0, 0);}  
+} */
+/* @keyframes BorderColor {
+    0%{color:#ffffff;}
+    70%{background-color:#ffffff;}  
+    100%{background-color:#F7F7F4 ;}  
+}
+
+@keyframes BorderColor {
+    0%{color:#ffffff;}
+    70%{background-color:#ffffff;}  
+    100%{background-color:#F7F7F4 ;}  
+} */
+@keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.logo{
+    animation-name: bomb;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.box{
+    /* border:5px solid black;
+    border-radius:50px;
+    padding-top:30px;
+    padding-bottom:30px; */
+    /* box-shadow: 0 0 5px grey; */
+    /* width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; */
+    font-size: 18px;
+    background-color: #F7F7F4;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    padding: 50px;
+/*     
+    animation-name: BoderColor;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+
+    animation-name: BoxColor;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1; */
+    animation: fadein 4s;
+    
+}
+h1{
+    /* animation-name: textColor;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1; */
+    text-align: center;
+    font-family:'S-CoreDream-6Bold';
+    animation: fadein 3s;
+}
+.total_voted_number{
+    text-align: center;
+    margin-top: 100px;    
+}
+div{
+    text-align : center;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+.nav{
+    text-align : left;
+}
+
