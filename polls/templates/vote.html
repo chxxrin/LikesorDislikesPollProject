@@ -2,168 +2,180 @@
 
 <head>
 </head>
+
 <body onload="다음(0);이전(0);">
 
-<form action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
+    <form action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
 
 
-    <div class = question>
-        <input type="radio" name="choice1" id="1" value="1"/>
-        <label> {{ vote.0.choice_set.all.0 }}</label> <br/>
-        <input type="radio" name="choice1" id="2" value="2"/>
-        <label> {{ vote.0.choice_set.all.1 }}</label> <br/>
+        <div class=question>
+            <!--1번 질문-->
 
-        <input type="button" class="다음" onclick="chk(1)" value="⏩">
-    </div>
+            <input type="radio" name="choice1" id="1" value="1" />
+            <label> {{ vote.0.choice_set.all.0 }}</label> <br />
 
-    <div class = question>
+            <input type="radio" name="choice1" id="2" value="2" />
+            <label> {{ vote.0.choice_set.all.1 }}</label> <br />
 
-        <input type="radio" name="choice2" id="3" value="3"/>
-        <label>  {{ vote.1.choice_set.all.0 }}</label> <br/>
-        <input type="radio" name="choice2" id="4" value="4"/>
-        <label>  {{ vote.1.choice_set.all.1 }} </label> <br/>
+            <input type="button" class="다음" onclick="chk(1)" value="⏩">
+        </div>
 
-        <input type="button" class="이전" onclick="이전(0)" value="⏪">
-        <input type="button" class="다음" onclick="chk(2)" value="⏩">
-    </div>
+        <div class=question>
+            <!--2번 질문-->
 
-    <div class = question>
+            <input type="radio" name="choice2" id="3" value="3" />
+            <label> {{ vote.1.choice_set.all.0 }}</label> <br />
+            <input type="radio" name="choice2" id="4" value="4" />
+            <label> {{ vote.1.choice_set.all.1 }} </label> <br />
 
-        <input type="radio" name="choice3" id="5" value="5" />
-        <label> {{ vote.2.choice_set.all.0 }}</label> <br/>
+            <input type="button" class="이전" onclick="이전(0)" value="⏪">
+            <input type="button" class="다음" onclick="chk(2)" value="⏩">
+        </div>
 
-        <input type="radio" name="choice3" id="6" value="6"/>
-        <label> {{ vote.2.choice_set.all.1 }}</label> <br/>
-        <input type="button" class="이전" onclick="이전(1)" value="⏪">
-        <input type="button" class="다음" onclick="chk(3)" value="⏩">
-    </div>
+        <div class=question>
+            <!--3번 질문-->
 
-    <div class = question>
+            <input type="radio" name="choice3" id="5" value="5" />
+            <label> {{ vote.2.choice_set.all.0 }}</label> <br />
 
-        <input type="radio" name="choice4" id="7" value="7"/>
-        <label>  {{ vote.3.choice_set.all.0 }}</label> <br/>
-        <input type="radio" name="choice4" id="8" value="8"/>
-        <label>  {{ vote.3.choice_set.all.1 }} </label> <br/>
-        <input type="button" class="이전" onclick="이전(2)" value="⏪">
-        <input type="button" class="다음" onclick="chk(4)" value="⏩">
-    </div>
+            <input type="radio" name="choice3" id="6" value="6" />
+            <label> {{ vote.2.choice_set.all.1 }}</label> <br />
+            <input type="button" class="이전" onclick="이전(1)" value="⏪">
+            <input type="button" class="다음" onclick="chk(3)" value="⏩">
+        </div>
 
-    <div class = question>
+        <div class=question>
+            <!--4번 질문-->
 
-        <input type="radio" name="choice5" id="9" value="9"/>
-        <label> {{ vote.4.choice_set.all.0 }}</label> <br/>
+            <input type="radio" name="choice4" id="7" value="7" />
+            <label> {{ vote.3.choice_set.all.0 }}</label> <br />
+            <input type="radio" name="choice4" id="8" value="8" />
+            <label> {{ vote.3.choice_set.all.1 }} </label> <br />
+            <input type="button" class="이전" onclick="이전(2)" value="⏪">
+            <input type="button" class="다음" onclick="chk(4)" value="⏩">
+        </div>
 
-        <input type="radio" name="choice5" id="10" value="10"/>
-        <label> {{ vote.4.choice_set.all.1 }}</label> <br/>
-        <input type="button" class="이전" onclick="이전(3)" value="⏪">
-        <input type="button" class="다음" onclick="chk(5)" value="⏩">
+        <div class=question>
+            <!--5번 질문-->
 
-    </div>
+            <input type="radio" name="choice5" id="9" value="9" />
+            <label> {{ vote.4.choice_set.all.0 }}</label> <br />
 
-    <div class = question>
+            <input type="radio" name="choice5" id="10" value="10" />
+            <label> {{ vote.4.choice_set.all.1 }}</label> <br />
+            <input type="button" class="이전" onclick="이전(3)" value="⏪">
+            <input type="button" class="다음" onclick="chk(5)" value="⏩">
 
-        <input type="radio" name="choice6" id="11" value="11"/>
-        <label>  {{ vote.5.choice_set.all.0 }}</label> <br/>
-        <input type="radio" name="choice6" id="12" value="12"/>
-        <label>  {{ vote.5.choice_set.all.1 }} </label> <br/>
-        <input type="button" class="이전" onclick="이전(4)" value="⏪">
-        <input type="button" class="다음" onclick="chk(6)" value="⏩">
+        </div>
 
-    </div>   
+        <div class=question>
+            <!--6번 질문-->
 
-    <div class = question>
+            <input type="radio" name="choice6" id="11" value="11" />
+            <label> {{ vote.5.choice_set.all.0 }}</label> <br />
+            <input type="radio" name="choice6" id="12" value="12" />
+            <label> {{ vote.5.choice_set.all.1 }} </label> <br />
+            <input type="button" class="이전" onclick="이전(4)" value="⏪">
+            <input type="button" class="다음" onclick="chk(6)" value="⏩">
 
-        <input type="radio" name="choice7" id="13" value="13"/>
-        <label> {{ vote.6.choice_set.all.0 }}</label> <br/>
+        </div>
 
-        <input type="radio" name="choice7" id="14" value="14"/>
-        <label> {{ vote.6.choice_set.all.1 }}</label> <br/>
-        <input type="button" class="이전" onclick="이전(5)" value="⏪">
-        <input type="button" class="다음" onclick="chk(7)" value="⏩">
-    </div>
+        <div class=question>
+            <!--7번 질문-->
 
-    <div class = question>
+            <input type="radio" name="choice7" id="13" value="13" />
+            <label> {{ vote.6.choice_set.all.0 }}</label> <br />
 
-        <input type="radio" name="choice8" id="15" value="15"/>
-        <label>  {{ vote.7.choice_set.all.0 }}</label> <br/>
-        <input type="radio" name="choice8" id="16" value="16"/>
-        <label>  {{ vote.7.choice_set.all.1 }} </label> <br/>
-        <input type="button" class="이전" onclick="이전(6)" value="⏪">
-        <input type="button" class="다음" onclick="chk(8)" value="⏩">
-    </div>    
-    
-    <div class = question>
+            <input type="radio" name="choice7" id="14" value="14" />
+            <label> {{ vote.6.choice_set.all.1 }}</label> <br />
+            <input type="button" class="이전" onclick="이전(5)" value="⏪">
+            <input type="button" class="다음" onclick="chk(7)" value="⏩">
+        </div>
+
+        <div class=question>
+            <!--8번 질문-->
+
+            <input type="radio" name="choice8" id="15" value="15" />
+            <label> {{ vote.7.choice_set.all.0 }}</label> <br />
+            <input type="radio" name="choice8" id="16" value="16" />
+            <label> {{ vote.7.choice_set.all.1 }} </label> <br />
+            <input type="button" class="이전" onclick="이전(6)" value="⏪">
+            <input type="button" class="다음" onclick="chk(8)" value="⏩">
+        </div>
+
+        <div class=question>
+            <!--9번 질문-->
+
+            <input type="radio" name="choice9" id="17" value="17" />
+            <label> {{ vote.8.choice_set.all.0 }}</label> <br />
+
+            <input type="radio" name="choice9" id="18" value="18" />
+            <label> {{ vote.8.choice_set.all.1 }}</label> <br />
+            <input type="button" class="이전" onclick="이전(7)" value="⏪">
+            <input type="button" class="다음" onclick="chk(9)" value="⏩">
+        </div>
+
+        <div class=question>
+            <!--10번 질문-->
+
+            <input type="radio" name="choice10" id="19" value="19" />
+            <label> {{ vote.9.choice_set.all.0 }}</label> <br />
+            <input type="radio" name="choice10" id="20" value="20" />
+            <label> {{ vote.9.choice_set.all.1 }} </label> <br />
+            <input type="button" class="이전" onclick="이전(8)" value="⏪">
+            <input type="submit" value="투표하기" />
+        </div>
+
+        <br>
+
+    </form>
+
+    <script>
+        function 다음(num) {
+            document.getElementsByClassName('question')[num].style.display = 'block';
+            document.getElementsByClassName('question')[(num + 1) % 10].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 2) % 10].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 3) % 10].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 4) % 10].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 5) % 10].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 6) % 10].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 7) % 10].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 8) % 10].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 9) % 10].style.display = 'none';
+        }
+
+        function 이전(num) {
+            document.getElementsByClassName('question')[num].style.display = 'block';
+            document.getElementsByClassName('question')[(num + 1) % 9].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 2) % 9].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 3) % 9].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 4) % 9].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 5) % 9].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 6) % 9].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 7) % 9].style.display = 'none';
+            document.getElementsByClassName('question')[(num + 8) % 9].style.display = 'none';
+        }
 
 
-        <input type="radio" name="choice9" id="17" value="17"/>
-        <label> {{ vote.8.choice_set.all.0 }}</label> <br/>
+        function chk(num) {
+            var checked = document.querySelector(`input[name = "choice${num}"]:checked`);
+            console.log('working')
+            if (checked == null) {
+                alert('둘 중 하나를 체크해주세요');
+            }
+            else {
+                다음(num)
+            }
+        }
 
-        <input type="radio" name="choice9" id="18" value="18"/>
-        <label> {{ vote.8.choice_set.all.1 }}</label> <br/>
-        <input type="button" class="이전" onclick="이전(7)" value="⏪">
-        <input type="button" class="다음" onclick="chk(9)" value="⏩">
-    </div>
+        /////////////////////////////////////////////////
+        function setCookie(cName, cValue, cDay) {
+            var expire = new Date();
+            expire.setDate(expire.getFullYear() + cDay);
+            cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
+            if (typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+            document.cookie = cookies;
+        }
 
-    <div class = question>
-
-        <input type="radio" name="choice10" id="19" value="19"/>
-        <label>  {{ vote.9.choice_set.all.0 }}</label> <br/>
-        <input type="radio" name="choice10" id="20" value="20"/>
-        <label>  {{ vote.9.choice_set.all.1 }} </label> <br/>
-
-        <input type="submit" value="투표하기"/>
-    </div>
-
-<br>
-
-</form>
-
-<script>
-function 다음(num) {
-    document.getElementsByClassName('question')[num].style.display = 'block';
-    document.getElementsByClassName('question')[(num + 1) % 10].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 2) % 10].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 3) % 10].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 4) % 10].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 5) % 10].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 6) % 10].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 7) % 10].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 8) % 10].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 9) % 10].style.display = 'none';
-}
-
-function 이전(num) {
-    document.getElementsByClassName('question')[num].style.display = 'block';
-    document.getElementsByClassName('question')[(num + 1) % 9].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 2) % 9].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 3) % 9].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 4) % 9].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 5) % 9].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 6) % 9].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 7) % 9].style.display = 'none';
-    document.getElementsByClassName('question')[(num + 8) % 9].style.display = 'none';
-}
-
-
-function chk(num){
-    var checked = document.querySelector(`input[name = "choice${num}"]:checked`);
-    console.log('working')
-    if(checked == null){  
-        alert('둘 중 하나를 체크해주세요');
-    }
-    else{
-        다음(num)
-    }
-}
-
-/////////////////////////////////////////////////
-function setCookie(cName, cValue, cDay){
-var expire = new Date();
-expire.setDate(expire.getFullYear() + cDay);
-cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
-if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
-document.cookie = cookies;
-}
-
-setCookie("isVoted", 'true', 300)
-</script>
+        setCookie("isVoted", 'true', 300)
+    </script>
