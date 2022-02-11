@@ -117,4 +117,4 @@ def vote_result(request, type_pk, user_type, c1, c2, c3, c4, c5, c6, c7, c8, c9,
     final_choice_list=[]
     for i in [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]:
         final_choice_list.append(Choice.objects.get(id=i))
-    return render(request, 'vote_result.html', {'type_pk':type_pk, 'user_type':user_type, 'final_choice_list' : final_choice_list, 'c1':c1,'c2':c2, 'c3':c3, 'c4':c4, 'c5':c5, 'c6':c6, 'c7':c7, 'c8':c8, 'c9':c9, 'c10':c10})
+    return render(request, 'vote_result.html', {'type_pk':type_pk, 'user_type':user_type, 'final_choice_list' : final_choice_list})
