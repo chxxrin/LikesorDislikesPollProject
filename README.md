@@ -23,6 +23,10 @@
 
 ![image](https://user-images.githubusercontent.com/76711238/152468781-77a930d8-0cf4-4f8d-840b-63b66b42ef9c.png)
 
+# 다시 투표하는 법
+- 지금 한번 투표하면 더이상 투표 못하게 했는데
+개발자 도구 - Application - isVoted 쿠키 삭제 - 해주시면 `투표하기` 링크 보이실 거예요!!!!!!!
+![image](https://user-images.githubusercontent.com/76711238/153557885-3da5f3b3-e651-4498-b891-0efbeb7e4190.png)
 
 # (+) Git 브랜치 두개로 나눠서 작업합시다! 😎
 - 그리고 기능 만들 때는 각자 브랜치 만들어서 (브랜치명은 프론트면 `fe/기능명` , 백이면 `be/기능명` 정도? 너무 딱딱하게 지키시진 않아도 돼욥 ㅎㅎ) 작업하고
