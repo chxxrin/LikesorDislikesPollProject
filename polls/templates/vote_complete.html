@@ -1,21 +1,47 @@
-<a href="{% url 'start_page' %}">홈화면으로(로고)</a><br>
+{% load static %}
 
-투표가 완료되었습니다<br>
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote_page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/vote.css">
+</head>
 
-<a href="{% url 'vote_result' type_pk=user_type_num user_type=user_type c1=v1 c2=v2 c3=v3 c4=v4 c5=v5 c6=v6 c7=v7 c8=v8 c9=v9 c10=v10 %}">결과 보러가기</a>
-<script>
-    // 쿠키 가져오는 함수
-    function getCookie(cookieName){
-    var cookieValue=null;
-    if(document.cookie){
-        var array=document.cookie.split((escape(cookieName)+'='));
-        if(array.length >= 2){
-            var arraySub=array[1].split(';');
-            cookieValue=unescape(arraySub[0]);
+<body class="container mt-3">
+    <div class="logo">
+        <a href="{% url 'start_page' %}">
+            <img src="{% static 'images/logo.png' %}" width="230px"; height="80px"; >
+        </a>
+    </div>
+
+    <a href="{% url 'start_page' %}"></a>
+
+    <div class="vote_complete_box">
+        <img src="../static/images/complete.png" alt="My Image" width="98px" height="79px">
+        <p>투표가</p>
+        <p>완료되었습니다</p>
+    </div>    
+    <div class="vote_complete_box">
+        <a href="{% url 'vote_result' type_pk=user_type_num user_type=user_type c1=v1 c2=v2 c3=v3 c4=v4 c5=v5 c6=v6 c7=v7 c8=v8 c9=v9 c10=v10 %}"><p>결과 보러가기</p></a>
+    </div>
+    <script>
+        // 쿠키 가져오는 함수
+        function getCookie(cookieName){
+        var cookieValue=null;
+        if(document.cookie){
+            var array=document.cookie.split((escape(cookieName)+'='));
+            if(array.length >= 2){
+                var arraySub=array[1].split(';');
+                cookieValue=unescape(arraySub[0]);
+            }
         }
+        return cookieValue;
     }
-    return cookieValue;
-}
-    console.log(getCookie("isVoted"))
-</script>
-
+        console.log(getCookie("isVoted"))
+    </script>
+</body>
+</html>
