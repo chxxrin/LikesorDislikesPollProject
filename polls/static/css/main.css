@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+span{display: inline;}
+.option1{
+    display: inline-block; padding: 0 10px; 
+    height: 50px; line-height: 50px;
+    background-color: #faff00;
+    box-sizing: border-box; color: rgb(0, 0, 0); float:left;
+    
+}
+.option2{
+    display: inline-block; padding: 0 10px; 
+    height: 50px; line-height: 50px; text-align: right; background-color: black;
+    box-sizing: border-box; color: #fff; float:left; 
+}
+.reset{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.new{
+    text-align: center;
+}
+.graph{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:10px;
+    width: 80%;
+}

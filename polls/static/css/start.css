@@ -6,29 +6,14 @@
 }
 @keyframes bomb {
     from{width:500%;}  
-    to{width:700px}  
+    to{width:800px}  
 }
-/* @keyframes textColor1 {
+@keyframes textColor {
     0%{color:white;}
-    70%{color:#F7F7F4;} 
+    70%{color:white} 
     100%{color:rgb(0, 0, 0);}  
-}
-@keyframes textColor2 {
-    0%{color:white;}
-    70%{color:#F7F7F4;} 
-    100%{color:rgb(0, 0, 0);}  
-} */
-/* @keyframes BorderColor {
-    0%{color:#ffffff;}
-    70%{background-color:#ffffff;}  
-    100%{background-color:#F7F7F4 ;}  
-}
+} 
 
-@keyframes BorderColor {
-    0%{color:#ffffff;}
-    70%{background-color:#ffffff;}  
-    100%{background-color:#F7F7F4 ;}  
-} */
 @keyframes fadein { /* Safari and Chrome */
     from {
         opacity: 0;
@@ -43,15 +28,6 @@
     animation-iteration-count: 1;
 }
 .box{
-    /* border:5px solid black;
-    border-radius:50px;
-    padding-top:30px;
-    padding-bottom:30px; */
-    /* box-shadow: 0 0 5px grey; */
-    /* width: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto; */
     font-size: 18px;
     background-color: #F7F7F4;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
@@ -61,28 +37,18 @@
     margin-right: auto;
     width: 500px;
     padding: 50px;
-/*     
-    animation-name: BoderColor;
-    animation-duration: 1.5s;
-    animation-iteration-count: 1;
-
-    animation-name: BoxColor;
-    animation-duration: 1.5s;
-    animation-iteration-count: 1; */
+    margin-bottom: 50PX;
     animation: fadein 4s;
-    
 }
 h1{
-    /* animation-name: textColor;
-    animation-duration: 1.5s;
-    animation-iteration-count: 1; */
     text-align: center;
-    font-family:'S-CoreDream-6Bold';
-    animation: fadein 3s;
 }
 .total_voted_number{
     text-align: center;
-    margin-top: 100px;    
+    margin-top: 100px;  
+    animation-name: textColor;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
 }
 div{
     text-align : center;
@@ -93,5 +59,8 @@ a{
 }
 .nav{
     text-align : left;
+}
+#vote:active{
+    box-shadow: 2px 6px 6px 3px black;
 }
 
