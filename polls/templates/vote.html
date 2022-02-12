@@ -3,10 +3,9 @@
 <head>
 </head>
 
-<body onload="다음(0);이전(0);">
+<body onload="다음(0,0);">
 
     <form action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
-
 
         <div class=question>
             <!--1번 질문-->
@@ -113,30 +112,6 @@
                 document.getElementById("submit-btn").style.display = 'block';
             }
         }
-
-        /*function 이전(num) {
-            document.getElementsByClassName('question')[num].style.display = 'block';
-            document.getElementsByClassName('question')[(num + 1) % 9].style.display = 'none';
-            document.getElementsByClassName('question')[(num + 2) % 9].style.display = 'none';
-            document.getElementsByClassName('question')[(num + 3) % 9].style.display = 'none';
-            document.getElementsByClassName('question')[(num + 4) % 9].style.display = 'none';
-            document.getElementsByClassName('question')[(num + 5) % 9].style.display = 'none';
-            document.getElementsByClassName('question')[(num + 6) % 9].style.display = 'none';
-            document.getElementsByClassName('question')[(num + 7) % 9].style.display = 'none';
-            document.getElementsByClassName('question')[(num + 8) % 9].style.display = 'none';
-        }
-
-
-        function chk(num) {
-            var checked = document.querySelector(`input[name = "choice${num}"]:checked`);
-            console.log('working')
-            if (checked == null) {
-                alert('둘 중 하나를 체크해주세요');
-            }
-            else {
-                다음(num)
-            }
-        }*/
 
         /////////////////////////////////////////////////
         function setCookie(cName, cValue, cDay) {
