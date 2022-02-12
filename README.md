@@ -14,15 +14,10 @@
 # 업데이트 된 사항 있으면 pull 하면서 작업하기!
 `git pull origin dev`로 dev 브랜치에 업데이트된 아이들 받아오면서 작업해주시면 됩니다!
 
-# db 등록
--> admin 페이지에서 Vote 모델 10개 (우리가 보여줄 질문의 갯수-이름은 상관 x 걍 번호로 붙이는 것도 상관 없어용 ㅎㅎ)
--> Choice 모델 만들 때 한 Vote 당 2개의 Choice 가 존재할 수 있도록 만들어주면 됩니당!
-- 아래와 같이 Choice 만들 때 얘가 속할 Vote 선택해주면 됩니당 ! 1번 질문에 민초 vs 반민초 를 하고 싶으니깐 1번 vote를 외래키로 가지는 choice 모델 두개 (민초, 반민초) 를 만들어주면 되겠죵!?
-
-![image](https://user-images.githubusercontent.com/76711238/152468763-17c1fea1-4e57-41b7-9291-ef83b40663da.png)
-
-![image](https://user-images.githubusercontent.com/76711238/152468781-77a930d8-0cf4-4f8d-840b-63b66b42ef9c.png)
-
+# 다시 투표하는 법
+- 지금 한번 투표하면 더이상 투표 못하게 했는데
+개발자 도구 - Application - isVoted 쿠키 삭제 - 해주시면 `투표하기` 링크 보이실 거예요!!!!!!!
+![image](https://user-images.githubusercontent.com/76711238/153557885-3da5f3b3-e651-4498-b891-0efbeb7e4190.png)
 
 # (+) Git 브랜치 두개로 나눠서 작업합시다! 😎
 - 그리고 기능 만들 때는 각자 브랜치 만들어서 (브랜치명은 프론트면 `fe/기능명` , 백이면 `be/기능명` 정도? 너무 딱딱하게 지키시진 않아도 돼욥 ㅎㅎ) 작업하고
