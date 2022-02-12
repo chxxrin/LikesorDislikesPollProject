@@ -11,18 +11,21 @@
     </div>
     <div class="total_voted_number">
         <h1>현재 투표에 참여한 인원은 {{ total_voted_number }}명 입니다.</h1><br>
-    </div>    
-    <div class="box" id = "vote" style ="display:block">
-        <a href="{% url 'vote_page' %}"><h1>투표하러 가기</h1></a>
-    </div>  
-    <br>
-    <div>
-        <img src="/static/images/logo.png" class="logo" width="700px" alt="No image">
     </div> 
     <br>
-    <div class="box">
-        <a href="{% url 'main_page' %}"><h1>실시간 투표 현황 보러가기</h1></a>
+    <div>
+        <img src="/static/images/logo.png" class="logo"  alt="No image" width="800px">
+    </div> 
+    <br>
+    <div class="box" id = "vote">
+        <a href="{% url 'vote_page' %}"><h1>투표하러 가기</h1></a>
     </div>
+    <div class="box" id = "vote">
+        <a href="{% url 'vote_page' %}"><h1>투표하러 가기</h1></a>
+    </div>
+    <div class="box" id="new">
+        <a href="{% url 'main_page' %}"><h1>실시간 투표 현황 보러가기</h1></a>
+    </div>  
     <br>
 </body>
 </html>
@@ -52,7 +55,5 @@
         document.getElementById("vote").style.display="none";
         console.log("재투표불가");
             }
-    }
-
-
+    } 
 </script>

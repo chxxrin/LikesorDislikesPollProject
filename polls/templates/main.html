@@ -1,19 +1,39 @@
+{% load static %}
 <html>
 <head>
     <link href="static/css/main.css" type="text/css" rel="stylesheet">  
 </head>
 <body>
-<a href="{% url 'start_page' %}">홈화면으로(로고)</a><br>
-
+<div class="nav" style="margin:0 auto;">
+    <a href="{% url 'start_page' %}">
+    <img src="{% static 'images/logo.png' %}" width="230px"; height="80px";></a>
+</div>
+<div>
+    <h1 class="new">실시간 투표 현황</h1>
+</div>
+<div class="all">
 {% for v in vote %}
+<script>
+    // var x = v.choice_set.all.0;
+    // var y = v.choice_set.all.1;
+</script>
     <br><br>
-    {{v.choice_set.all.0}} : {{v.choice_set.all.0.count}} vs
-    {{v.choice_set.all.1}} : {{v.choice_set.all.1.count}}
+        <div class="graph">
+            <span class="option1" 
+            style="width:
+            calc(100*{{v.choice_set.all.0.count}}% / {{total_voted_number}})"><b>{{v.choice_set.all.0}}</span>
+            <span class="option2" style="
+            width:calc(100*{{v.choice_set.all.1.count}}% / {{total_voted_number}})"><b>{{v.choice_set.all.1}}</span>
+        </div>   
+    <br>      
 {% endfor %}
+</div>  
 <br>
-
 <br>
-<button onClick="window.location.reload()">새로고침</button>
+<br>
+<br>
+<img class="reset" src="static/images/reset.png" width=100px; onClick="window.location.reload()">
+<!-- <button onClick="window.location.reload()">새로고침</button> -->
 </body>
 
 
