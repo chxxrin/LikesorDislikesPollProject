@@ -23,7 +23,7 @@ span{
 .option1{
     display: inline-block; 
     padding: 0 10px; 
-    height: 50px; 
+    height: 100px; 
     line-height: 50px;
     background-color: #faff00;
     margin-bottom: 5%;
@@ -31,12 +31,13 @@ span{
     color: rgb(0, 0, 0); 
     float: left;
     font-size: 20px;
-    
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 .option2{
     display: inline-block; 
     padding: 0 10px; 
-    height: 50px; 
+    height: 100px; 
     line-height: 50px; 
     /* text-align: right;  */
     background-color: black;
@@ -45,6 +46,8 @@ span{
     color: #fff; 
     float:left; 
     font-size: 20px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 .reset{
     display: block;
