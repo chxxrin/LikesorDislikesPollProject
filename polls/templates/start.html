@@ -1,59 +1,66 @@
 {% load static %}
 <!--링크 클릭하자 마자 보이는 화면-->
 <html>
+
 <head>
-    <link href="static/css/start.css?after" type="text/css" rel="stylesheet">  
+    <link href="static/css/start.css?after" type="text/css" rel="stylesheet">
 </head>
-<body>
+
+<body onload="voteCheck()">
     <div class="nav">
         <a href="{% url 'start_page' %}">
-            <img src="{% static 'images/logo.png' %}" width="230px"; height="80px"; >
+            <img src="{% static 'images/logo.png' %}" width="230px" ; height="80px" ;>
     </div>
     <div class="total_voted_number">
         <h1>현재 투표에 참여한 인원은 {{ total_voted_number }}명 입니다.</h1><br>
-    </div> 
+    </div>
     <br>
     <div>
-        <img src="/static/images/logo.png" class="logo"  alt="No image" width="800px">
-    </div> 
-    <br>
-    <div class="box" id = "vote">
-        <a href="{% url 'vote_page' %}"><h1>투표하러 가기</h1></a>
+        <img src="/static/images/logo.png" class="logo" alt="No image" width="800px">
     </div>
-    <div class="box" id = "vote">
-        <a href="{% url 'vote_page' %}"><h1>투표하러 가기</h1></a>
+    <br>
+    <div class="votepossible">
+        <div class="box" id="vote">
+            <a href="{% url 'vote_page' %}">
+                <h1>투표하러 가기</h1>
+            </a>
+        </div>
     </div>
     <div class="box" id="new">
-        <a href="{% url 'main_page' %}"><h1>실시간 투표 현황 보러가기</h1></a>
-    </div>  
+        <a href="{% url 'main_page' %}">
+            <h1>실시간 투표 현황 보러가기</h1>
+        </a>
+    </div>
+
     <br>
 </body>
+
 </html>
 
 <script>
     console.log(getCookie("isVoted"))
 
     // 쿠키 가져오는 함수
-    function getCookie(cookieName){
-    var cookieValue=null;
-    if(document.cookie){
-        var array=document.cookie.split((escape(cookieName)+'='));
-        if(array.length >= 2){
-            var arraySub=array[1].split(';');
-            cookieValue=unescape(arraySub[0]);
-        }
-    }
-    return cookieValue;
-}
-    // 투표 판별, 했으면 true, 안했으면 false
-    window.onload = function voteCheck(){
-
-    if (getCookie("isVoted")==null){
-        //투표 가능하도록
-        console.log("재투표가능");
-    }else{
-        document.getElementById("vote").style.display="none";
-        console.log("재투표불가");
+    function getCookie(cookieName) {
+        var cookieValue = null;
+        if (document.cookie) {
+            var array = document.cookie.split((escape(cookieName) + '='));
+            if (array.length >= 2) {
+                var arraySub = array[1].split(';');
+                cookieValue = unescape(arraySub[0]);
             }
+        }
+        return cookieValue;
+    }
+    // 투표 판별, 했으면 true, 안했으면 false
+    window.onload = function voteCheck() {
+
+        if (getCookie("isVoted") == null) {
+            //투표 가능하도록
+            console.log("재투표가능");
+        } else {
+            document.getElementsByClassName('votepossible').style.display = 'none';
+            console.log("재투표불가");
+        }
     } 
 </script>
