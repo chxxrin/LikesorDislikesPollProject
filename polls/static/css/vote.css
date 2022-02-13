@@ -48,11 +48,11 @@
     border-radius: 15px;
     text-align: center;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
 
 }
-.vote_box1:after, .vote_box1:before {
+/* .vote_box1:after, .vote_box1:before {
 	top: 100%;
 	left: 50%;
 	border: solid transparent;
@@ -61,9 +61,9 @@
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-}
+} */
 
-.vote_box1:after {
+/* .vote_box1:after {
 	border-color: rgba(255, 255, 255, 0);
 	border-top-color: #ffffff;
 	border-width: 20px;
@@ -74,13 +74,16 @@
 	border-top-color: #000000;
 	border-width: 21px;
 	margin-left: -21px;
-}
+} */
 .vote_box1:hover {
     background-color: #faff00;
+    color: black;
+    border:#faff00;
 }
-.vote_box1:hover:after{
+/* .vote_box1:hover:after{
     border-top-color: #faff00;
-}
+    color: black;
+} */
 
 .vote_box2 {
 	width: 100%;
@@ -93,10 +96,10 @@
     border-radius: 15px;
     text-align: center;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
 }
-.vote_box2:after, .vote_box2:before {
+/* .vote_box2:after, .vote_box2:before {
 	bottom: 100%;
 	left: 50%;
 	border: solid transparent;
@@ -105,9 +108,9 @@
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-}
+} */
 
-.vote_box2:after {
+/* .vote_box2:after {
 	border-color: rgba(255, 255, 255, 0);
 	border-bottom-color: #ffffff;
 	border-width: 20px;
@@ -118,14 +121,17 @@
 	border-bottom-color: #000000;
 	border-width: 21px;
 	margin-left: -21px;
-}
+} */
 
 .vote_box2:hover {
     background-color: #faff00;
+    color: black;
+    border:#faff00;
 }
-.vote_box2:hover:after{
+/* .vote_box2:hover:after{
     border-bottom-color: #faff00;
-}
+    color: black;
+} */
 
 .vote_done{
     padding-top: 30px;
@@ -135,18 +141,19 @@
 }
 
 .vote_done input{
-    margin-top:15%;
+    margin-top: 10px;
+    margin-bottom: 30px;
     padding: 3%;
     width: 100%;
     border: 1px solid #F7F7F4;
     background-color: #F7F7F4;
     color:black;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 16px;
 }
 
 /*----------Vote_Complete-----------*/
