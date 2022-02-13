@@ -53,13 +53,13 @@
         return cookieValue;
     }
     // 투표 판별, 했으면 true, 안했으면 false
-    window.onload = function voteCheck() {
-
+    window.onload =function voteCheck() {
+        var voting = document.getElementsByClassName("votepossible")[0];
         if (getCookie("isVoted") == null) {
             //투표 가능하도록
             console.log("재투표가능");
         } else {
-            document.getElementsByClassName('votepossible').style.display = 'none';
+            voting.style.display = 'none';
             console.log("재투표불가");
         }
     } 
