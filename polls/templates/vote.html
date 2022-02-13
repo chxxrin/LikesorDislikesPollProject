@@ -18,7 +18,7 @@
     <form class="container mt-3" action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
         
         <div class="progress" style="height: 20px;">
-            <div class="progress-bar" role="progressbar" style="width: calc(100/10*1%); height: 20px" ></div>
+            <div class="progress-bar bg-warning" role="progressbar" style="width: calc(100/10*1%); height: 20px; background-color: yellow !important;" ></div>
         </div>
 
         <div class=question>
@@ -177,5 +177,5 @@
             document.cookie = cookies;
         }
 
-        setCookie("isVoted", 'true', 300)
+        setCookie("isVoted", 'true', 1)
     </script>
