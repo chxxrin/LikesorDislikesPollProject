@@ -22,7 +22,7 @@ def is_powerful(opt1, opt2) :
         opt1.powerful = True
         opt2.powerful = False
         opt1.save()
-        opt2.save()
+        opt2.save() 
         return 1
     
     # 1번이 2번보다 작으면 0 반환
