@@ -4,10 +4,17 @@
     <link href="static/css/main.css" type="text/css" rel="stylesheet">  
 </head>
 <body>
-<div class="nav" style="margin:0 auto;">
+    <div class="logo">
+        <a href="{% url 'start_page' %}">
+            <img src="{% static 'images/logo.png' %}" width="230px"; height="80px"; >
+        </a>
+    </div>
+
+<!-- <div class="nav" style="margin:0 auto;">
     <a href="{% url 'start_page' %}">
     <img src="{% static 'images/logo.png' %}" width="230px"; height="80px";></a>
-</div>
+</div> -->
+
 <div>
     <h1 class="new">실시간 투표 현황</h1>
 </div>
@@ -28,7 +35,7 @@
 <br>
 <br>
 <br>
-<img class="reset" src="static/images/reset.png" width=100px; onClick="window.location.reload()">
+<img class="reset" src="static/images/reset.png" width=80px; onClick="window.location.reload()">
 <!-- <button onClick="window.location.reload()">새로고침</button> -->
 </body>
 
