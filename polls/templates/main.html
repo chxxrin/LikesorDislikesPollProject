@@ -2,6 +2,7 @@
 <html>
 <head>
     <link href="static/css/main.css" type="text/css" rel="stylesheet">  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="logo">
@@ -10,33 +11,97 @@
         </a>
     </div>
 
-<!-- <div class="nav" style="margin:0 auto;">
-    <a href="{% url 'start_page' %}">
-    <img src="{% static 'images/logo.png' %}" width="230px"; height="80px";></a>
-</div> -->
-
 <div>
     <h1 class="new">실시간 투표 현황</h1>
 </div>
 <div class="all">
-{% for v in vote %}
+    <div class="graph">
+        <span class="option1" id="1">{{vote.0.choice_set.all.0}}</span>
+        <span class="option2" id="2">{{vote.0.choice_set.all.1}}</span>
+    </div>
     <br>
-        <div class="graph">
-            <span class="option1" 
-            style="width:
-            calc(100*{{v.choice_set.all.0.count}}% / {{total_voted_number}})"><b>{{v.choice_set.all.0}}</span>
-            <span class="option2" style="
-            width:calc(100*{{v.choice_set.all.1.count}}% / {{total_voted_number}})"><b>{{v.choice_set.all.1}}</span>
-        </div>   
-    <br>      
-{% endfor %}
+    <div class="graph">
+        <span class="option1" id="3">{{vote.1.choice_set.all.0}}</span>
+        <span class="option2" id="4">{{vote.1.choice_set.all.1}}</span>
+    </div>
+    <br>
+    <div class="graph">
+        <span class="option1" id="5">{{vote.2.choice_set.all.0}}</span>
+        <span class="option2" id="6">{{vote.2.choice_set.all.1}}</span>
+    </div>
+    <br>
+    <div class="graph">
+        <span class="option1" id="7">{{vote.3.choice_set.all.0}}</span>
+        <span class="option2" id="8">{{vote.3.choice_set.all.1}}</span>
+    </div>
+    <br>
+    <div class="graph">
+        <span class="option1" id="9">{{vote.4.choice_set.all.0}}</span>
+        <span class="option2" id="10">{{vote.4.choice_set.all.1}}</span>
+    </div>
+    <br>
+    <div class="graph">
+        <span class="option1" id="11">{{vote.5.choice_set.all.0}}</span>
+        <span class="option2" id="12">{{vote.5.choice_set.all.1}}</span>
+    </div>
+    <br>
+    <div class="graph">
+        <span class="option1" id="13">{{vote.6.choice_set.all.0}}</span>
+        <span class="option2" id="14">{{vote.6.choice_set.all.1}}</span>
+    </div>
+    <br>
+    <div class="graph">
+        <span class="option1" id="15">{{vote.7.choice_set.all.0}}</span>
+        <span class="option2" id="16">{{vote.7.choice_set.all.1}}</span>
+    </div>
+    <br>
+    <div class="graph">
+        <span class="option1" id="17">{{vote.8.choice_set.all.0}}</span>
+        <span class="option2" id="18">{{vote.8.choice_set.all.1}}</span>
+    </div>
+    <br>
+    <div class="graph">
+        <span class="option1" id="19">{{vote.9.choice_set.all.0}}</span>
+        <span class="option2" id="20">{{vote.9.choice_set.all.1}}</span>
+    </div>
+
 </div>  
 <br>
 <br>
 <br>
 <br>
 <img class="reset" src="static/images/reset.png" width=80px; onClick="window.location.reload()">
-<!-- <button onClick="window.location.reload()">새로고침</button> -->
 </body>
 
 
+<script>
+    $("#1").width("{{vote.0.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#2").width("{{vote.0.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#3").width("{{vote.1.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#4").width("{{vote.1.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#5").width("{{vote.2.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#6").width("{{vote.2.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#7").width("{{vote.3.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#8").width("{{vote.3.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#9").width("{{vote.4.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#10").width("{{vote.4.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#11").width("{{vote.5.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#12").width("{{vote.5.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#13").width("{{vote.6.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#14").width("{{vote.6.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#15").width("{{vote.7.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#16").width("{{vote.7.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#17").width("{{vote.8.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#18").width("{{vote.8.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+
+    $("#19").width("{{vote.9.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
+    $("#20").width("{{vote.9.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
+</script>

@@ -1,12 +1,7 @@
-from calendar import c
-from email import message
-from ssl import OP_NO_TLSv1_1
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import *
-from django.contrib import messages
 
 total_question_number = 10 # 총 질문의 갯수
-
 
 def is_powerful(opt1, opt2) :
     # 1번과 2번이 같으면 -1 반환
@@ -107,22 +102,8 @@ def vote(request):
 
         #4) 내가 선택한 아이디값
 
-        v1=voted_choice_id[0]
-        v2=voted_choice_id[1]
-        v3=voted_choice_id[2]
-        v4=voted_choice_id[3]
-        v5=voted_choice_id[4]
-        v6=voted_choice_id[5]
-        v7=voted_choice_id[6]
-        v8=voted_choice_id[7]
-        v9=voted_choice_id[8]
-        v10=voted_choice_id[9]
-     
-        return render(request, 'vote_complete.html',{'user_type_num' : user_type_num, 'user_type':user_type, 'v1':v1, 'v2':v2, 'v3':v3, 'v4':v4, 'v5':v5, 'v6':v6, 'v7':v7, 'v8':v8, 'v9' :v9, 'v10' : v10 })
+        final_choice_list=[]
+        for i in voted_choice_id:
+            final_choice_list.append(Choice.objects.get(id=i))
 
-
-def vote_result(request, type_pk, user_type, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10) : 
-    final_choice_list=[]
-    for i in [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]:
-        final_choice_list.append(Choice.objects.get(id=i))
-    return render(request, 'vote_result.html', {'type_pk':type_pk, 'user_type':user_type, 'final_choice_list' : final_choice_list})
+        return render(request, 'vote_result.html', {'type_pk':user_type_num, 'user_type':user_type, 'final_choice_list' : final_choice_list})
