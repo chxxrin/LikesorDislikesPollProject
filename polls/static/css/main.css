@@ -4,18 +4,42 @@
     font-weight: normal;
     font-style: normal;
 }
-span{display: inline;}
+
+*{
+    font-family: 'S-CoreDream-6Bold';
+}
+
+span{
+    display: inline;
+}
+
+.logo {
+    padding: 3%;
+}
+
 .option1{
-    display: inline-block; padding: 0 10px; 
-    height: 50px; line-height: 50px;
+    display: inline-block; 
+    padding: 0 10px; 
+    height: 50px; 
+    line-height: 50px;
     background-color: #faff00;
-    box-sizing: border-box; color: rgb(0, 0, 0); float:left;
+    /* box-sizing: border-box;  */
+    color: rgb(0, 0, 0); 
+    float:left;
+    font-size: 20px;
     
 }
 .option2{
-    display: inline-block; padding: 0 10px; 
-    height: 50px; line-height: 50px; text-align: right; background-color: black;
-    box-sizing: border-box; color: #fff; float:left; 
+    display: inline-block; 
+    padding: 0 10px; 
+    height: 50px; 
+    line-height: 50px; 
+    /* text-align: right;  */
+    background-color: black;
+    /* box-sizing: border-box;  */
+    color: #fff; 
+    float:left; 
+    font-size: 20px;
 }
 .reset{
     display: block;
@@ -25,6 +49,7 @@ span{display: inline;}
 .new{
     text-align: center;
 }
+
 .graph{
     display: flex;
     width: 80%;
@@ -32,4 +57,5 @@ span{display: inline;}
     align-items: center;
     margin-right: 10%; 
     margin-left: 10%;
+    text-align: center;
 }
