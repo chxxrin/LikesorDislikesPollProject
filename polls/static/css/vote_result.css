@@ -9,13 +9,17 @@ body {
     font-family: S-CoreDream-4Regular;
 }
 
+.result-image {
+    width: 380px;
+    height: 340px;
+}
 .result-box {
     background-color: #F7F7F4;
     font-size: 24px;
     border-radius: 30px;
     text-align: center;
-    margin: 100px;
-    padding: 100px;
+    margin: 50px;
+    padding: 50px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
@@ -28,7 +32,7 @@ body {
     background-color: #F7F7F4;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 30px;
-    margin: 100px;
+    margin: 50px;
     padding: 50px;
 }
 

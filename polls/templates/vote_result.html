@@ -18,13 +18,13 @@
     <!-- myresult 안의 영역이 결과화면 이미지로 변환됨 -->
     <div class="result-box" id="myresult">
     {% if type_pk == 1 %}
-        <p>주류 항목 {{user_type}}개를 고른 당신은 비주류 인간입니다.</p>
+        <p><img src="{% static 'images/비주류.png' %}" class="result-image"><br><br><br>주류 항목 {{user_type}}개를 고른 당신은<br>대한민국 1%의 마이너 취향을 가진 완전 비주류</p>
     {% elif type_pk == 2 %}
-        <p>주류 항목 {{user_type}}개를 고른 당신은 적당히 주류 인간입니다.</p>
+        <p><img src="{% static 'images/조금비주류.png' %}" class="result-image"><br><br><br>주류 항목 {{user_type}}개를 고른 당신은<br>메이저취향을 가진 비주류</p>
     {% elif type_pk == 3 %}
-        <p>주류 항목 {{user_type}}개를 고른 당신은 주류 인간입니다.</p>
+        <p><img src="{% static 'images/조금주류.png' %}" class="result-image"><br><br><br>주류 항목 {{user_type}}개를 고른 당신은<br>마이너취향을 가진 주류</p>
     {% else %}
-        <p>주류 항목 {{user_type}}개를 고른 당신은 완전 주류 인간입니다.</p>
+        <p><img src="{% static 'images/주류.png' %}" class="result-image"><br><br><br>주류 항목 {{user_type}}개를 고른 당신은<br>대한민국 90%의 메이저 취향을 가진 완전 주류</p>
     {% endif %}
     </div>
 
@@ -51,7 +51,7 @@
         <a id="btnTwitter" class="link-icon twitter" href="javascript:shareTwitter();"><img src="{% static 'images/twitter.png' %}" width="50px"; height="50px"; ></a>
         <a id="btnFacebook" class="link-icon facebook" href="javascript:shareFacebook();"><img src="{% static 'images/facebook.png' %}" width="50px"; height="50px"; ></a>    
         <a id="btnKakao" class="link-icon kakao" href="javascript:shareKakao();"><img src="{% static 'images/kakao.png' %}" width="50px"; height="50px"; ></a>  
-        <a class="hover" href='javascript:void(0);' onclick="PrintDiv($('#myresult'));">이미지로 저장</a>
+        <a class="hover" href='javascript:void(0);' onclick="PrintDiv($('#myresult'));"><img src="{% static 'images/download.png' %}" width="50px"; height="50px"; ></a>
     </div>
    
     <div class="now-voting">
