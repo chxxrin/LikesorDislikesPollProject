@@ -52,7 +52,7 @@ h1{
 .total_voted_number{
     text-align: center;
     font-size: 20px;
-    margin-top: 30%;  
+    margin-top: 25%;  
     animation-name: textColor;
     animation-duration: 1.2s;
     animation-iteration-count: 1;

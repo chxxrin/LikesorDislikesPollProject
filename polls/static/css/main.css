@@ -9,6 +9,9 @@
     font-family: 'S-CoreDream-6Bold';
 }
 
+h1 {
+    margin:10%;
+}
 span{
     display: inline;
 }
@@ -23,6 +26,7 @@ span{
     height: 50px; 
     line-height: 50px;
     background-color: #faff00;
+    margin-bottom: 5%;
     /* box-sizing: border-box;  */
     color: rgb(0, 0, 0); 
     float:left;
@@ -36,6 +40,7 @@ span{
     line-height: 50px; 
     /* text-align: right;  */
     background-color: black;
+    margin-bottom: 5%;
     /* box-sizing: border-box;  */
     color: #fff; 
     float:left; 
@@ -50,6 +55,12 @@ span{
     text-align: center;
 }
 
+.all {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
 .graph{
     display: flex;
     width: 80%;
