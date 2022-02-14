@@ -168,14 +168,18 @@
             }
         }
 
-        /////////////////////////////////////////////////
-        function setCookie(cName, cValue, cDay) {
-            var expire = new Date();
-            expire.setDate(expire.getFullYear() + cDay);
-            cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
-            if (typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
-            document.cookie = cookies;
-        }
+         /////////////////////////////////////////////////
+        function setCookie( name, value, expiredays ) {
+            var todayDate = new Date();
+                if (expiredays == null){
+                expiredays =1;
+                }
+                console.log(todayDate)
+                console.log(todayDate.getDate())
+                console.log(expiredays)
+            todayDate.setDate( todayDate.getDate() + expiredays );
+            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }           
 
         setCookie("isVoted", 'true', 1)
-    </script>
+        </script>
