@@ -2,22 +2,25 @@
 <html>
 <head>
     <link href="static/css/main.css" type="text/css" rel="stylesheet">  
+    <link href="static/css/style.css" type="text/css" rel="stylesheet">  
+    <script src="https://kit.fontawesome.com/105dacfb44.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-color: black;">
     <div class="logo">
         <a href="{% url 'start_page' %}">
-            <img src="{% static 'images/logo.png' %}" width="230px"; height="80px"; >
+            <img src="{% static 'images/logo3.png' %}" width="240px" ; height="95px"; >
         </a>
     </div>
 
 <div>
-    <h1 class="new">실시간 투표 현황</h1>
+   
+    <h1 class="new">실시간 투표 현황
 </div>
 <div class="all">
     <div class="graph">
         <span class="option1" id="1">{{vote.0.choice_set.all.0}}</span>
-        <span class="option2" id="2">{{vote.0.choice_set.all.1}}</span>
+        <span class="option2" id="2">{{vote.0.choice_set.all.1}}<span class="p"></span></span>
     </div>
     <br>
     <div class="graph">
@@ -64,16 +67,24 @@
         <span class="option1" id="19">{{vote.9.choice_set.all.0}}</span>
         <span class="option2" id="20">{{vote.9.choice_set.all.1}}</span>
     </div>
-
+    <!-- <img class="reset" src="static/images/reset.png" style="cursor:pointer" width=80px; onClick="window.location.reload()"> -->
+    <i style="cursor:pointer;color:rgb(0, 0, 0)" onClick="window.location.reload()" class="fa-solid fa-rotate fa-4x "></i>
+    <!-- <i   class="fa fa-refresh fa-spin fa-fw"></i>   -->
 </div>  
 <br>
 <br>
 
-<img class="reset" src="static/images/reset.png" style="cursor:pointer" width=80px; onClick="window.location.reload()">
+
 <br><br>
 </body>
+</html>
+<footer style="text-align: center; color: rgb(72, 72, 60);">
+    ©2022 sogangsisters@gmail.com<br>
+    <a href = "https://www.instagram.com/likelion_sg"><img src="/static/images/sg.png" style="color: darkgray;" width="50" height="50"></a>
+    <a href = "https://www.instagram.com/likelion_ds"><img src="/static/images/ds.png"  width="50" height="50"></a>
 
-
+    </footer>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
     $("#1").width("{{vote.0.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
     $("#2").width("{{vote.0.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
@@ -105,24 +116,25 @@
     $("#19").width("{{vote.9.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");
     $("#20").width("{{vote.9.choice_set.all.1.count}}" / "{{total_voted_number}}" * 100 + "%");
 
-    document.getElementById("1").innerHTML = "{{vote.0.choice_set.all.0}}<br>({{vote.0.choice_set.all.0.count}}표, "+ ("{{vote.0.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("2").innerHTML = "{{vote.0.choice_set.all.1}}<br>({{vote.0.choice_set.all.1.count}}표, "+ ("{{vote.0.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("3").innerHTML = "{{vote.1.choice_set.all.0}}<br>({{vote.1.choice_set.all.0.count}}표, "+ ("{{vote.1.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("4").innerHTML = "{{vote.1.choice_set.all.1}}<br>({{vote.1.choice_set.all.1.count}}표, "+ ("{{vote.1.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("5").innerHTML = "{{vote.2.choice_set.all.0}}<br>({{vote.2.choice_set.all.0.count}}표, "+ ("{{vote.2.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("6").innerHTML = "{{vote.2.choice_set.all.1}}<br>({{vote.2.choice_set.all.1.count}}표, "+ ("{{vote.2.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("7").innerHTML = "{{vote.3.choice_set.all.0}}<br>({{vote.3.choice_set.all.0.count}}표, "+ ("{{vote.3.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("8").innerHTML = "{{vote.3.choice_set.all.1}}<br>({{vote.3.choice_set.all.1.count}}표, "+ ("{{vote.3.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("9").innerHTML = "{{vote.4.choice_set.all.0}}<br>({{vote.4.choice_set.all.0.count}}표, "+ ("{{vote.4.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("10").innerHTML = "{{vote.4.choice_set.all.1}}<br>({{vote.4.choice_set.all.1.count}}표, "+ ("{{vote.4.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("11").innerHTML = "{{vote.5.choice_set.all.0}}<br>({{vote.5.choice_set.all.0.count}}표, "+ ("{{vote.5.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("12").innerHTML = "{{vote.5.choice_set.all.1}}<br>({{vote.5.choice_set.all.1.count}}표, "+ ("{{vote.5.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("13").innerHTML = "{{vote.6.choice_set.all.0}}<br>({{vote.6.choice_set.all.0.count}}표, "+ ("{{vote.6.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("14").innerHTML = "{{vote.6.choice_set.all.1}}<br>({{vote.6.choice_set.all.1.count}}표, "+ ("{{vote.6.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("15").innerHTML = "{{vote.7.choice_set.all.0}}<br>({{vote.7.choice_set.all.0.count}}표, "+ ("{{vote.7.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("16").innerHTML = "{{vote.7.choice_set.all.1}}<br>({{vote.7.choice_set.all.1.count}}표, "+ ("{{vote.7.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("17").innerHTML = "{{vote.8.choice_set.all.0}}<br>({{vote.8.choice_set.all.0.count}}표, "+ ("{{vote.8.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("18").innerHTML = "{{vote.8.choice_set.all.1}}<br>({{vote.8.choice_set.all.1.count}}표, "+ ("{{vote.8.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("19").innerHTML = "{{vote.9.choice_set.all.0}}<br>({{vote.9.choice_set.all.0.count}}표, "+ ("{{vote.9.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
-    document.getElementById("20").innerHTML = "{{vote.9.choice_set.all.1}}<br>({{vote.9.choice_set.all.1.count}}표, "+ ("{{vote.9.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"%)"
+    document.getElementById("1").innerHTML = "{{vote.0.choice_set.all.0}}"+" ( "+("{{vote.0.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.0.choice_set.all.0.count}}표"
+    document.getElementById("2").innerHTML = "{{vote.0.choice_set.all.1}}"+" ( "+("{{vote.0.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.0.choice_set.all.1.count}}표"
+    document.getElementById("3").innerHTML = "{{vote.1.choice_set.all.0}}"+" ( "+("{{vote.1.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.1.choice_set.all.0.count}}표"
+    document.getElementById("4").innerHTML = "{{vote.1.choice_set.all.1}}"+" ( "+("{{vote.1.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.1.choice_set.all.1.count}}표"
+    document.getElementById("5").innerHTML = "{{vote.2.choice_set.all.0}}"+" ( "+("{{vote.2.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.2.choice_set.all.0.count}}표"
+    document.getElementById("6").innerHTML = "{{vote.2.choice_set.all.1}}"+" ( "+("{{vote.2.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.2.choice_set.all.1.count}}표"
+    document.getElementById("7").innerHTML = "{{vote.3.choice_set.all.0}}"+" ( "+("{{vote.3.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.3.choice_set.all.0.count}}표"
+    document.getElementById("8").innerHTML = "{{vote.3.choice_set.all.1}}"+" ( "+("{{vote.3.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.3.choice_set.all.1.count}}표"
+    document.getElementById("9").innerHTML = "{{vote.4.choice_set.all.0}}"+" ( "+("{{vote.4.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.4.choice_set.all.0.count}}표"
+    document.getElementById("10").innerHTML = "{{vote.4.choice_set.all.1}}"+" ( "+("{{vote.4.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.4.choice_set.all.1.count}}표"
+    document.getElementById("11").innerHTML = "{{vote.5.choice_set.all.0}}"+" ( "+("{{vote.5.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.5.choice_set.all.0.count}}표"
+    document.getElementById("12").innerHTML = "{{vote.5.choice_set.all.1}}"+" ( "+("{{vote.5.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.5.choice_set.all.1.count}}표"
+    document.getElementById("13").innerHTML = "{{vote.6.choice_set.all.0}}"+" ( "+("{{vote.6.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.6.choice_set.all.0.count}}표"
+    document.getElementById("14").innerHTML = "{{vote.6.choice_set.all.1}}"+" ( "+("{{vote.6.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.6.choice_set.all.1.count}}표"
+    document.getElementById("15").innerHTML = "{{vote.7.choice_set.all.0}}"+" ( "+("{{vote.7.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.7.choice_set.all.0.count}}표"
+    document.getElementById("16").innerHTML = "{{vote.7.choice_set.all.1}}"+" ( "+("{{vote.7.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.7.choice_set.all.1.count}}표"
+    document.getElementById("17").innerHTML = "{{vote.8.choice_set.all.0}}"+" ( "+("{{vote.8.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.8.choice_set.all.0.count}}표"
+    document.getElementById("18").innerHTML = "{{vote.8.choice_set.all.1}}"+" ( "+("{{vote.8.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.8.choice_set.all.1.count}}표"
+    document.getElementById("19").innerHTML = "{{vote.9.choice_set.all.0}}"+" ( "+("{{vote.9.choice_set.all.0.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.9.choice_set.all.0.count}}표"
+    document.getElementById("20").innerHTML = "{{vote.9.choice_set.all.1}}"+" ( "+("{{vote.9.choice_set.all.1.count}}"/"{{total_voted_number}}"*100).toFixed(2)+"% )"+"<br>{{vote.9.choice_set.all.1.count}}표"
+
 </script>

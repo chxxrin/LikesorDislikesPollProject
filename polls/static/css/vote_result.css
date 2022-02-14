@@ -14,7 +14,7 @@ body {
     height: 340px;
 }
 .result-box {
-    background-color: #F7F7F4;
+    background-color: #626262;
     font-size: 24px;
     border-radius: 30px;
     text-align: center;
@@ -29,7 +29,7 @@ body {
 
 .my-vote {
     font-size: 18px;
-    background-color: #F7F7F4;
+    background-color: #626262;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 30px;
     margin: 50px;

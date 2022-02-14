@@ -9,14 +9,20 @@
     font-family: 'S-CoreDream-6Bold';
 }
 
+
+
+
 h1 {
+    background-color: black;
     margin:10%;
 }
 span{
+    box-shadow: #aeaea5;
     display: inline;
 }
 
 .logo {
+    background-color: black;
     padding: 3%;
 }
 
@@ -55,6 +61,11 @@ span{
     margin-right: auto;
 }
 .new{
+    background-color: black;
+    color: #fff;
+    margin : 10 auto;
+    font-size: 50px;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -62,7 +73,7 @@ span{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #F7F7F4;
+    background-color: #626262;
     border-radius: 30px;
     text-align: center;
     margin: 40px;

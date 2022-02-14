@@ -4,22 +4,30 @@
 
 <head>
     <link href="static/css/start.css?after" type="text/css" rel="stylesheet">
+    <link href="static/css/style.css" type="text/css" rel="stylesheet">  
+    <script src="https://kit.fontawesome.com/105dacfb44.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload="voteCheck()">
     <div>
     <div class="nav">
         <a href="{% url 'start_page' %}">
-            <img src="{% static 'images/logo.png' %}" width="230px" ; height="80px" ;>
+            <img src="{% static 'images/logo3.png' %}" width="240px" ; height="95px" ;>
     </div>
-    <div class="total_voted_number">
-        <h1>현재 투표에 참여한 인원은 {{ total_voted_number }}명 입니다.</h1><br>
+    <div class="total_voted_num" style="display:none;">
+        {{total_voted_number}}
+    </div>
+    <div class="total_voted_number" value="{{total_voted_number}}">
+        <!--현재 투표한 인원나타낼 div-->
+    </div>
+    <div class="count_num"></div>
+    <br>
+    <div class="image blinking">
+        <img src="/static/images/logo3.png" class="logo" alt="No image" width="800px">
     </div>
     <br>
-    <div>
-        <img src="/static/images/logo.png" class="logo" alt="No image" width="800px">
-    </div>
-    <br>
+    <div class = "voteimpossible" style="    text-shadow: 2px 2px 6px #c9c9c9;
+    color:#faff00;">투표는 하루에 한번만 가능합니다.</div>
     <div class="votepossible">
         <div class="box" id="vote">
             <a href="{% url 'vote_page' %}">
@@ -36,9 +44,17 @@
     <br>
 </div>
 </body>
-
 </html>
+<footer style="text-align: center; color:rgb(72, 72, 60);">
+    © 2022 sogangsisters@gmail.com<br>
+    <a href = "https://www.instagram.com/likelion_sg"><img src="/static/images/sg.png" style="color: darkgray;" width="50" height="50"></a>
+    
+    <a href = "https://www.instagram.com/likelion_ds"><img src="/static/images/ds.png"  width="50" height="50"></a>
 
+    <!-- <a href = "https://www.instagram.com/likelion_sg/"><i style="color:#faff00" class="fab fa-instagram"></i></a>
+    <a href = "https://www.instagram.com/likelion_sg/"><i style="color:#faff00" class="fab fa-instagram"></i></a> -->
+    </footer>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
     console.log(getCookie("isVoted"))
 
@@ -57,12 +73,52 @@
     // 투표 판별, 했으면 true, 안했으면 false
     window.onload =function voteCheck() {
         var voting = document.getElementsByClassName("votepossible")[0];
+        var voted = document.getElementsByClassName("voteimpossible")[0];
         if (getCookie("isVoted") == null) {
             //투표 가능하도록
+            voting.style.display = 'block';
+            voted.style.display = 'none';
             console.log("재투표가능");
         } else {
             voting.style.display = 'none';
+            voted.style.display = 'block';
             console.log("재투표불가");
         }
     } 
+var today = new Date();
+
+var year = today.getFullYear();
+var month = ('0' + (today.getMonth() + 1)).slice(-2);
+var day = ('0' + today.getDate()).slice(-2);
+
+var dateString = year + '년 ' + month  + '월' + day + "일";
+
+voted_num = document.getElementsByClassName("total_voted_num")[0].innerHTML
+
+var defaulttxt = " 누적 투표인원은 "
+// var text = "my line1 \nMyline 2";
+// $('#dialog').html(text.replace("\n", "<br>"));
+
+$({ val : 0 }).animate({ val : voted_num }, {
+    duration: 1500,
+    step: function() {
+      var num = numberWithCommas(Math.floor(this.val));
+      $(".total_voted_number").text(dateString+defaulttxt + num + "명입니다.");
+    },
+    complete: function() {
+      var num = numberWithCommas(Math.floor(this.val));
+      $(".total_voted_number").text(dateString+defaulttxt + num + "명입니다.");
+    }
+  });
+  
+  function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+var today = new Date();
+var year = today.getFullYear();
+var month = ('0' + (today.getMonth() + 1)).slice(-2);
+var day = ('0' + today.getDate()).slice(-2);
+
+var dateString = year + '년' + month  + '월' + day + "일";
+
 </script>

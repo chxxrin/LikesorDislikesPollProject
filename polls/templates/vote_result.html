@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/vote_result.css'%}"/>
+    <link href="static/css/style.css" type="text/css" rel="stylesheet">  
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
     <script src="{% static 'js/html2canvas.js' %}"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 
-<body>
+<body style="background-color: black;">
     <div class="logo">
         <a href="{% url 'start_page' %}">
-            <img src="{% static 'images/logo.png' %}" width="230px"; height="80px"; >
+            <img src="{% static 'images/logo3.png' %}" width="240px" ; height="95px"; >
         </a>
     </div>
     
@@ -56,7 +57,7 @@
    
     <div class="now-voting">
         ________________________________________________<br>
-        <a href="{% url 'main_page' %}">실시간 투표 현황 보러가기</a><br><br>
+        <a href="{% url 'main_page' %}" style="color: #faff00;">실시간 투표 현황 보러가기</a><br><br>
     </div>
 
 
