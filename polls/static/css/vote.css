@@ -15,13 +15,14 @@
 .progress{
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    background: #FFFFFF;
+    background: #ffffff;
     margin-top: 55px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 55px;
 }
 .progress-bar {
+    background: #565656;
     background-color: #faff00;
     border-radius: 30px;
 }
@@ -41,15 +42,18 @@
     width: 100%;
     height: 25%;
 	position: relative;
-	background: #000000;
-	border: 1px solid #000000;
+	background: #faff00;
+	border: 1px solid #faff00;
     box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* box-shadow: 5px 5px 5px 5px #faff00; */
+    box-shadow: 2px 1px 10px 1px olive;
     border-radius: 15px;
     text-align: center;
     font-weight: 700;
     font-size: 50px;
-    color: white;
+    /* color: white; */
+    color:black;
     margin-top:10%;
     margin-bottom:10%;
 
@@ -78,9 +82,9 @@
 	margin-left: -21px;
 } */
 .vote_box1:hover {
-    background-color: #faff00;
-    color: black;
-    border:#faff00;
+    background-color: #565656;
+    color: rgb(255, 255, 255);
+    border:#565656;
 }
 /* .vote_box1:hover:after{
     border-top-color: #faff00;
@@ -91,15 +95,19 @@
 	width: 100%;
     height: 25%;
 	position: relative;
-	background: #000000;
-	border: 1px solid #000000;
+	/* background: #000000;
+	border: 1px solid #000000; */
+    background: #faff00;
+	border: 1px solid #faff00;
     box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 1px 10px 1px olive;
+    /* box-shadow: 5px 5px 5px 5px #faff00; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     border-radius: 15px;
     text-align: center;
     font-weight: 700;
     font-size: 50px;
-    color: white;
+    color:black;
     margin-top:10%;
     margin-bottom:10%;
 }
@@ -128,9 +136,9 @@
 } */
 
 .vote_box2:hover {
-    background-color: #faff00;
-    color: black;
-    border:#faff00;
+    background-color: #565656;
+    color: #ffffff;
+    border:#565656;
 }
 /* .vote_box2:hover:after{
     border-bottom-color: #faff00;
@@ -167,7 +175,7 @@
     margin-bottom: 55px;
     text-align : center;
     font-size: 18px;
-    background-color: #F7F7F4;
+    background-color: #5a5a57;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 30px;
     padding: 50px;
@@ -180,4 +188,8 @@
     text-align: center;
     color: #000000;
     margin:0px;
+}
+
+#text_vs{
+    color : rgb(113, 113, 113)
 }
