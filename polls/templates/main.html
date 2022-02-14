@@ -3,6 +3,7 @@
 <head>
     <link href="static/css/main.css" type="text/css" rel="stylesheet">  
     <link href="static/css/style.css" type="text/css" rel="stylesheet">  
+    <script src="https://kit.fontawesome.com/105dacfb44.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 </head>
 <body style="background-color: black;">
@@ -66,7 +67,9 @@
         <span class="option1" id="19">{{vote.9.choice_set.all.0}}</span>
         <span class="option2" id="20">{{vote.9.choice_set.all.1}}</span>
     </div>
-    <img class="reset" src="static/images/reset.png" style="cursor:pointer" width=80px; onClick="window.location.reload()">
+    <!-- <img class="reset" src="static/images/reset.png" style="cursor:pointer" width=80px; onClick="window.location.reload()"> -->
+    <i style="cursor:pointer;color:rgb(0, 0, 0)" onClick="window.location.reload()" class="fa-solid fa-rotate fa-4x "></i>
+    <!-- <i   class="fa fa-refresh fa-spin fa-fw"></i>   -->
 </div>  
 <br>
 <br>
@@ -74,7 +77,13 @@
 
 <br><br>
 </body>
+</html>
+<footer style="text-align: center; color: rgb(72, 72, 60);">
+    ©2022 sogangsisters@gmail.com<br>
+    <a href = "https://www.instagram.com/likelion_sg"><img src="/static/images/sg.png" style="color: darkgray;" width="50" height="50"></a>
+    <a href = "https://www.instagram.com/likelion_ds"><img src="/static/images/ds.png"  width="50" height="50"></a>
 
+    </footer>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script>
     $("#1").width("{{vote.0.choice_set.all.0.count}}" / "{{total_voted_number}}" * 100 + "%");

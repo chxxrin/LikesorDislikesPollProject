@@ -157,8 +157,8 @@
     margin-bottom: 30px;
     padding: 3%;
     width: 100%;
-    border: 1px solid #F7F7F4;
-    background-color: #F7F7F4;
+    border: 1px solid #000000;
+    background-color: #f1f13f;
     color:black;
     /* box-sizing: border-box; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -166,6 +166,13 @@
     text-align: center;
     font-weight: bold;
     font-size: 20px;
+}
+
+
+.vote_done input:hover {
+    background-color: #565656;
+    color: #ffffff;
+    border:#565656;
 }
 
 /*----------Vote_Complete-----------*/
