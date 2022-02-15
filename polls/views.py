@@ -3,6 +3,7 @@ from .models import *
 
 total_question_number = 10 # 총 질문의 갯수
 
+
 def is_powerful(opt1, opt2) :
     # 1번과 2번이 같으면 -1 반환
     if (opt1.count == opt2.count) :
@@ -31,7 +32,7 @@ def is_powerful(opt1, opt2) :
 
 def start_page(request) :
     total_voted_number = Choice.objects.get(id=1).count +Choice.objects.get(id=2).count # 총 투표한 사람들의 수
-    return render(request, 'start.html', {'total_voted_number' : total_voted_number })
+    return render(request, 'index.html', {'total_voted_number' : total_voted_number })
 
 
 def main_page(request) :
