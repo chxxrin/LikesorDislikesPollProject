@@ -61,9 +61,32 @@
         <a href="{% url 'main_page' %}" style="color: #faff00;">실시간 투표 현황 보러가기</a><br><br>
     </div>
 
-
+    <div style="display:hidden">
+        <div id="idlist0">{{id_list.0}}</div>
+        <div id="idlist1">{{id_list.1}}</div>
+        <div id="idlist2">{{id_list.2}}</div>
+        <div id="idlist3">{{id_list.3}}</div>
+        <div id="idlist4">{{id_list.4}}</div>
+        <div id="idlist5">{{id_list.5}}</div>
+        <div id="idlist6">{{id_list.6}}</div>
+        <div id="idlist7">{{id_list.7}}</div>
+        <div id="idlist8">{{id_list.8}}</div>
+        <div id="idlist9">{{id_list.9}}</div>
+    </div>
 
 <script>
+    var idlist0=document.getElementById("idlist0").innerText;
+    var idlist1=document.getElementById("idlist1").innerText;
+    var idlist2=document.getElementById("idlist2").innerText;
+    var idlist3=document.getElementById("idlist3").innerText;
+    var idlist4=document.getElementById("idlist4").innerText;
+    var idlist5=document.getElementById("idlist5").innerText;
+    var idlist6=document.getElementById("idlist6").innerText;
+    var idlist7=document.getElementById("idlist7").innerText;
+    var idlist8=document.getElementById("idlist8").innerText;
+    var idlist9=document.getElementById("idlist9").innerText;
+
+
     function shareTwitter() {
         var sendText = "전국민대결끝판왕"; // 전달할 텍스트
         var sendUrl = "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}"; // 전달할 URL
@@ -89,12 +112,12 @@
        objectType: 'feed',
        content: {
          title: "전국민대결끝판왕", // 보여질 제목
-         
+
          description: "나의 취향은 마이너할까, 메이저? 다른 사람들의 취향은 어떨까?", // 보여질 설명
-         imageUrl: "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}", // 콘텐츠 URL
+         imageUrl: `http://likesordislikes.me/vote/result?choice1=${idlist0}&choice2=${idlist1}&choice3=${idlist2}&choice4=${idlist3}&choice5=${idlist4}&choice6=${idlist5}&choice7=${idlist6}&choice8=${idlist7}&choice9=${idlist8}&choice10=${idlist9}`, // 콘텐츠 URL
          link: {
-            mobileWebUrl: "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}",
-            webUrl: "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}",
+            mobileWebUrl: `http://likesordislikes.me/vote/result?choice1=${idlist0}&choice2=${idlist1}&choice3=${idlist2}&choice4=${idlist3}&choice5=${idlist4}&choice6=${idlist5}&choice7=${idlist6}&choice8=${idlist7}&choice9=${idlist8}&choice10=${idlist9}`,
+            webUrl: `http://likesordislikes.me/vote/result?choice1=${idlist0}&choice2=${idlist1}&choice3=${idlist2}&choice4=${idlist3}&choice5=${idlist4}&choice6=${idlist5}&choice7=${idlist6}&choice8=${idlist7}&choice9=${idlist8}&choice10=${idlist9}`,
          }
        }
      });
