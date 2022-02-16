@@ -65,13 +65,13 @@
 <script>
     function shareTwitter() {
         var sendText = "전국민대결끝판왕"; // 전달할 텍스트
-        var sendUrl = "http://likesordislikes.me/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}"; // 전달할 URL
+        var sendUrl = "http://likesordislikes.me/vote_result"; // 전달할 URL
         window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
     }
     
     
     function shareFacebook() {
-        var sendUrl = "http://likesordislikes.me/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}"; // 전달할 URL
+        var sendUrl = "http://likesordislikes.me/vote_result"; // 전달할 URL
         window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
     }
     
@@ -89,10 +89,10 @@
        content: {
          title: "전국민대결끝판왕", // 보여질 제목
          description: "논란 종결", // 보여질 설명
-         imageUrl: "http://likesordislikes.me/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}", // 콘텐츠 URL
+         imageUrl: "http://likesordislikes.me/vote_result", // 콘텐츠 URL
          link: {
-            mobileWebUrl: "http://likesordislikes.me/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}",
-            webUrl: "http://likesordislikes.me/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}"
+            mobileWebUrl: "http://likesordislikes.me/vote_result",
+            webUrl: "http://likesordislikes.me/vote_result"
          }
        }
      });
