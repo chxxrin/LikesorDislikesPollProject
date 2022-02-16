@@ -170,14 +170,5 @@
         }
 
          /////////////////////////////////////////////////
-        function setCookie( name, value, expiredays ) {
-            var todayDate = new Date();
-                if (expiredays == null){
-                expiredays =1;
-                }
-            todayDate.setDate( todayDate.getDate() + expiredays );
-            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-        }           
 
-        setCookie("isVoted", 'true', 1)
         </script>
