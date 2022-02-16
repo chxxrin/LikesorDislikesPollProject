@@ -66,13 +66,13 @@
 <script>
     function shareTwitter() {
         var sendText = "전국민대결끝판왕"; // 전달할 텍스트
-        var sendUrl = "http://likesordislikes.me/vote_result"; // 전달할 URL
+        var sendUrl = "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}"; // 전달할 URL
         window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
     }
     
     
     function shareFacebook() {
-        var sendUrl = "http://likesordislikes.me/vote/result"; // 전달할 URL
+        var sendUrl = "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}"; // 전달할 URL
         window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
     }
     
@@ -89,11 +89,12 @@
        objectType: 'feed',
        content: {
          title: "전국민대결끝판왕", // 보여질 제목
-         description: "논란 종결", // 보여질 설명
-         imageUrl: "http://likesordislikes.me/vote/result", // 콘텐츠 URL
+         
+         description: "나의 취향은 마이너할까, 메이저? 다른 사람들의 취향은 어떨까?", // 보여질 설명
+         imageUrl: "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}", // 콘텐츠 URL
          link: {
-            mobileWebUrl: "http://likesordislikes.me/vote/result",
-            webUrl: "http://likesordislikes.me/vote/result"
+            mobileWebUrl: "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}",
+            webUrl: "http://likesordislikes.me/vote/result?choice1={{id_list.0}}&choice2={{id_list.1}}&choice3={{id_list.2}}&choice4={{id_list.3}}&choice5={{id_list.4}}&choice6={{id_list.5}}&choice7={{id_list.6}}&choice8={{id_list.7}}&choice9={{id_list.8}}&choice10={{id_list.9}}",
          }
        }
      });

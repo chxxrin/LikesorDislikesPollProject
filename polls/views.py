@@ -104,7 +104,10 @@ def vote(request):
         #4) 내가 선택한 아이디값
 
         final_choice_list=[]
+        id_list=[]
+
         for i in voted_choice_id:
             final_choice_list.append(Choice.objects.get(id=i))
-
-        return render(request, 'vote_result.html', {'type_pk':user_type_num, 'user_type':user_type, 'final_choice_list' : final_choice_list})
+            id_list.append(i)
+        print(id_list)
+        return render(request, 'vote_result.html', {'type_pk':user_type_num, 'user_type':user_type, 'final_choice_list' : final_choice_list,"id_list":id_list})
