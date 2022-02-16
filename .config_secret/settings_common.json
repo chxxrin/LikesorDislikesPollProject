@@ -1,0 +1,6 @@
+{
+    "django":{
+      "secret_key":"django-insecure-_--x0z=u91pyjl*#r2rn1*y1^9wcawo7&=3hek72@$dgt2xxrp",
+      "js_key":"0d9af30db343d4e71f650e9ad9067c58"
+    }
+}
