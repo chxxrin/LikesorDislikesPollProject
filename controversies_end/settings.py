@@ -25,13 +25,13 @@ JAVASCRIPT_KEY= os.getenv("JAVASCRIPT_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
 
     ".ap-northeast-2.compute.amazonaws.com",
     ".likesordislikes.me",
-    "127.0.0.1"
+    "127.0.0.1",
 
 ]
 
