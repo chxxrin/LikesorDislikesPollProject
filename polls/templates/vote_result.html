@@ -2,6 +2,7 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
+    <link href="https://images.velog.io/images/myway00/post/ea055d2f-8da9-408b-85e6-ac9edf4eff37/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/vote_result.css'%}"/>
     <link href="static/css/style.css" type="text/css" rel="stylesheet">  
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
@@ -116,8 +117,6 @@
         </div>
     </div>
     
-
-
     <!-- sns 공유 버튼 -->
     <div class="sns-share-text">
         내 취향 공유하기
@@ -134,18 +133,41 @@
         <a href="{% url 'main_page' %}" style="color: #faff00;">실시간 투표 현황 보러가기</a><br><br>
     </div>
 
-
+    <div style="display:hidden">
+        <div id="idlist0">{{id_list.0}}</div>
+        <div id="idlist1">{{id_list.1}}</div>
+        <div id="idlist2">{{id_list.2}}</div>
+        <div id="idlist3">{{id_list.3}}</div>
+        <div id="idlist4">{{id_list.4}}</div>
+        <div id="idlist5">{{id_list.5}}</div>
+        <div id="idlist6">{{id_list.6}}</div>
+        <div id="idlist7">{{id_list.7}}</div>
+        <div id="idlist8">{{id_list.8}}</div>
+        <div id="idlist9">{{id_list.9}}</div>
+    </div>
 
 <script>
+    var idlist0=document.getElementById("idlist0").innerText;
+    var idlist1=document.getElementById("idlist1").innerText;
+    var idlist2=document.getElementById("idlist2").innerText;
+    var idlist3=document.getElementById("idlist3").innerText;
+    var idlist4=document.getElementById("idlist4").innerText;
+    var idlist5=document.getElementById("idlist5").innerText;
+    var idlist6=document.getElementById("idlist6").innerText;
+    var idlist7=document.getElementById("idlist7").innerText;
+    var idlist8=document.getElementById("idlist8").innerText;
+    var idlist9=document.getElementById("idlist9").innerText;
+
+
     function shareTwitter() {
         var sendText = "전국민대결끝판왕"; // 전달할 텍스트
-        var sendUrl = "http://127.0.0.1:8000/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}"; // 전달할 URL
+        var sendUrl = window.location.href; // 전달할 URL
         window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
     }
     
     
     function shareFacebook() {
-        var sendUrl = "http://127.0.0.1:8000/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}"; // 전달할 URL
+        var sendUrl =window.location.href; // 전달할  URL
         window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
     }
     
@@ -162,11 +184,12 @@
        objectType: 'feed',
        content: {
          title: "전국민대결끝판왕", // 보여질 제목
-         description: "논란 종결", // 보여질 설명
-         imageUrl: "http://127.0.0.1:8000/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}", // 콘텐츠 URL
+
+         description: "나의 취향은 마이너할까, 메이저? 다른 사람들의 취향은 어떨까?", // 보여질 설명
+         imageUrl: "https://media.vlpt.us/images/myway00/post/b88da63b-f3d4-4e30-932b-f52e341d98a9/logo2.png", // 콘텐츠 URL
          link: {
-            mobileWebUrl: "http://127.0.0.1:8000/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}",
-            webUrl: "http://127.0.0.1:8000/vote_result/{{type_pk}}/{{user_type}}/{{c1}}/{{c2}}/{{c3}}/{{c4}}/{{c5}}/{{c6}}/{{c7}}/{{c8}}/{{c9}}/{{c10}}"
+            mobileWebUrl:window.location.href,
+            webUrl: window.location.href
          }
        }
      });
@@ -186,7 +209,23 @@
         link.href = uri;
         document.body.appendChild(link);
         link.click();
-    }
+    }       
+    
+    
+    function setCookie( name, value, expiredays ) {
+            var todayDate = new Date();
+                if (expiredays == null){
+                expiredays =1;
+                }
+            todayDate.setDate( todayDate.getDate() + expiredays );
+            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }           
+
+        setCookie("isVoted", 'true', 1)
     
     </script>
+
+
+
+
 </body>

@@ -1,0 +1,56 @@
+{% load static %}
+<!--링크 클릭하자 마자 보이는 화면-->
+<html>
+
+<head>
+    <link href="https://images.velog.io/images/myway00/post/ea055d2f-8da9-408b-85e6-ac9edf4eff37/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="static/css/start.css?after" type="text/css" rel="stylesheet">
+    <link href="static/css/style.css" type="text/css" rel="stylesheet">  
+    <script src="https://kit.fontawesome.com/105dacfb44.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="voteCheck()">
+    <div>
+    <div class="nav">
+        <a href="{% url 'start_page' %}">
+            <img src="{% static 'images/logo3.png' %}" width="240px" ; height="95px" ;>
+    </div>
+
+    <div class="total_voted_number" value="{{total_voted_number}}">
+        <h2>잘못된 페이지입니다<br></h2>
+    </div>
+  
+
+</body>
+</html>
+<footer style="text-align: center; color:rgb(72, 72, 60);">
+    © 2022 sogangsisters@gmail.com<br>
+    <a href = "https://www.instagram.com/likelion_sg"><img src="/static/images/sg.png" style="color: darkgray;" width="50" height="50"></a>
+    
+    <a href = "https://www.instagram.com/likelion_ds"><img src="/static/images/ds.png"  width="50" height="50"></a>
+
+<br><br><br>
+<div class = "ad1" style="text-align: center;">
+    <ins class="kakao_ad_area" style="display:block;" 
+ data-ad-unit    = "DAN-K1ONl6gS9BoFHEkW" 
+ data-ad-width   = "320" 
+ data-ad-height  = "50"></ins> 
+
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+</div>
+<div class="ad3" style="text-align: center;">
+    <ins class="kakao_ad_area" style="display:none;" 
+ data-ad-unit    = "DAN-nHZsneVl5QJNXG3H" 
+ data-ad-width   = "728" 
+ data-ad-height  = "90"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+</div>
+
+<div class="ad2" style="text-align: center;">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7779512750803803"
+     crossorigin="anonymous"></script>
+</div>
+
+</footer>
+
+<script>
