@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'S-CoreDream-6Bold';
+}
+
+
+
+
+h1 {
+    background-color: black;
+    margin:10%;
+}
+span{
+    box-shadow: #aeaea5;
+    display: inline;
+}
+
+.logo {
+    background-color: black;
+    padding: 3%;
+}
+
+.option1{
+    display: inline-block; 
+    padding: 0 10px; 
+    height: 100px; 
+    line-height: 50px;
+    background-color: #faff00;
+    margin-bottom: 5%;
+    /* box-sizing: border-box;  */
+    color: rgb(0, 0, 0); 
+    float: left;
+    font-size: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.option2{
+    display: inline-block; 
+    padding: 0 10px; 
+    height: 100px; 
+    line-height: 50px; 
+    /* text-align: right;  */
+    background-color: black;
+    margin-bottom: 5%;
+    /* box-sizing: border-box;  */
+    color: #fff; 
+    float:left; 
+    font-size: 20px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.reset{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.new{
+    background-color: black;
+    color: #fff;
+    margin : 10 auto;
+    font-size: 50px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #A4A4A4;
+    border-radius: 30px;
+    text-align: center;
+    margin: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+
+}
+.graph{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10%; 
+    margin-left: 10%;
+    text-align: center;
+}

@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@keyframes bomb {
+    from{width:500%;}  
+    to{width:800px}  
+}
+@keyframes textColor {
+    0%{color:#8b8c40;}
+    70%{color:#d2d53e;} 
+    100%{color:#faff00;}  
+} 
+
+@keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    background-color: black;
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.logo{
+    animation-name: bomb;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.box{
+    font-size: 18px;
+    background-color: #faff00;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.782);
+    border-radius: 30px;
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* width: 500px; */
+    padding: 5%;
+    margin: 10%;
+    /* margin-bottom: 50PX; */
+    animation: fadein 4s;
+}
+
+.box:hover {
+    background-color: #42423d;
+    color: black;
+    border:#42423d;
+}
+
+h1{
+    text-align: center;
+}
+.total_voted_number{
+    text-shadow: 2px 2px 6px #c9c9c9;
+    color:#faff00;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 10%;  
+    /* margin-right: 16%;
+    margin-left: 16%; */
+    animation-name: textColor;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+}
+div{
+    text-align : center;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+.nav{
+    text-align : left;
+    padding: 3%;
+}
+#vote:active{
+    box-shadow: 2px 6px 6px 3px black;
+}
+
+/* 
+.blinking{
+    animation-delay :0s;
+    -webkit-animation:blink 1.5s ease 6 alternate;
+    -moz-animation:blink 1.5s 6 alternate;
+    animation:blink  1.5s 6 alternate;
+  }
+  @-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+https://pikabu.tistory.com/103 */

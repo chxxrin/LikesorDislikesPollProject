@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*------VOTE--------*/
+* {
+    font-family: 'S-CoreDream-6Bold';
+}
+
+.logo {
+    padding: 3%;
+}
+.progress{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    background: #ffffff;
+    margin-top: 55px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 55px;
+}
+.progress-bar {
+    background: #565656;
+    background-color: #faff00;
+    border-radius: 30px;
+}
+#text_vs{
+    margin:auto;
+    padding:20px;
+    text-align: center;
+    font-size:40px;
+    font-weight: bold;
+}
+
+.vote{
+    display: relative;
+}
+
+.vote_box1 {
+    width: 100%;
+    height: 25%;
+	position: relative;
+	background: #faff00;
+	border: 1px solid #faff00;
+    box-sizing: border-box;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* box-shadow: 5px 5px 5px 5px #faff00; */
+    box-shadow: 2px 1px 10px 1px olive;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+    /* color: white; */
+    color:black;
+    margin-top:10%;
+    margin-bottom:10%;
+
+}
+/* .vote_box1:after, .vote_box1:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+} */
+
+/* .vote_box1:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #ffffff;
+	border-width: 20px;
+	margin-left: -20px;
+}
+.vote_box1:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: #000000;
+	border-width: 21px;
+	margin-left: -21px;
+} */
+.vote_box1:hover {
+    background-color: #565656;
+    color: rgb(255, 255, 255);
+    border:#565656;
+}
+/* .vote_box1:hover:after{
+    border-top-color: #faff00;
+    color: black;
+} */
+
+.vote_box2 {
+	width: 100%;
+    height: 25%;
+	position: relative;
+	/* background: #000000;
+	border: 1px solid #000000; */
+    background: #faff00;
+	border: 1px solid #faff00;
+    box-sizing: border-box;
+    box-shadow: 2px 1px 10px 1px olive;
+    /* box-shadow: 5px 5px 5px 5px #faff00; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+    color:black;
+    margin-top:10%;
+    margin-bottom:10%;
+}
+/* .vote_box2:after, .vote_box2:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+} */
+
+/* .vote_box2:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #ffffff;
+	border-width: 20px;
+	margin-left: -20px;
+}
+.vote_box2:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-bottom-color: #000000;
+	border-width: 21px;
+	margin-left: -21px;
+} */
+
+.vote_box2:hover {
+    background-color: #565656;
+    color: #ffffff;
+    border:#565656;
+}
+/* .vote_box2:hover:after{
+    border-bottom-color: #faff00;
+    color: black;
+} */
+
+.vote_done{
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.vote_done input{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 3%;
+    width: 100%;
+    border: 1px solid #000000;
+    background-color: #f1f13f;
+    color:black;
+    /* box-sizing: border-box; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.vote_done input:hover {
+    background-color: #565656;
+    color: #ffffff;
+    border:#565656;
+}
+
+/*----------Vote_Complete-----------*/
+
+.vote_complete_box {
+    margin-top: 55px;
+    margin-bottom: 55px;
+    text-align : center;
+    font-size: 18px;
+    background-color: #5a5a57;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.vote_complete_box p{
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    color: #000000;
+    margin:0px;
+}
+
+#text_vs{
+    color : rgb(113, 113, 113)
+}
