@@ -1,162 +1,156 @@
 {% load static %}
+<html>
 
-<head>
-    <meta charset="UTF-8">
-    <link href="https://images.velog.io/images/myway00/post/ea055d2f-8da9-408b-85e6-ac9edf4eff37/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'css/vote.css'%}"/>
-    <link href="static/css/style.css" type="text/css" rel="stylesheet">  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-    <script src="{% static 'js/html2canvas.js' %}"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://images.velog.io/images/myway00/post/ea055d2f-8da9-408b-85e6-ac9edf4eff37/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link rel="stylesheet" href="{% static 'css/vote.css'%}"/>
+        <link href="static/css/style.css" type="text/css" rel="stylesheet">  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+        <script src="{% static 'js/html2canvas.js' %}"></script>
+    </head>
 
-<body style="background-color: black;" onload="다음(0,0);">
+    <body style="background-color: black;" onload="다음(0,0);">
 
-    <div class="logo">
-        <a href="{% url 'start_page' %}">
-            <img src="{% static 'images/logo3.png' %}"width="240px" ; height="95px"; >
-        </a>
-    </div>
-    <form class="container mt-3" action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
-        
-        <div class="progress" style="height: 20px; background-color: darkgray;">
-            <div class="progress-bar bg-warning" role="progressbar" style="width: calc(100/10*1%); height: 20px; background-color: yellow !important;" ></div>
+        <div class="logo">
+            <a href="{% url 'start_page' %}">
+                <img src="{% static 'images/logo3.png' %}"width="240px" ; height="95px"; >
+            </a>
         </div>
 
-        <div class=question>
-            <!--1번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice1" id="1" value="1" onclick="다음(1,1);">{{ vote.0.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice1" id="2" value="2" onclick="다음(1,2);">{{ vote.0.choice_set.all.1 }}</button>
-            </div>
-            <input type="hidden" name="choice1" id="choice1" value="">
-        </div>
-
-        <div class=question>
-            <!--2번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice2" id="3" value="3" onclick="다음(2,3);">{{ vote.1.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice2" id="4" value="4" onclick="다음(2,4);">{{ vote.1.choice_set.all.1 }}</button>                
+        <form class="container mt-3" action="{% url 'vote' %}" method="get" enctype="multipart/form-data">
+            
+            <div class="progress" style="height: 25px; background-color: darkgray;">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: calc(100/10*1%); height: 25px; background-color: yellow !important;" ></div>
             </div>
 
-            <input type="hidden" name="choice2" id="choice2" value="">
-        </div>
-
-        <div class=question>
-            <!--3번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice3" id="5" value="5" onclick="다음(3,5);">{{ vote.2.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice3" id="6" value="6" onclick="다음(3,6);">{{ vote.2.choice_set.all.1 }}</button>                
+            <div class=question>
+                <!--1번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice1" id="1" value="1" onclick="다음(1,1);">{{ vote.0.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice1" id="2" value="2" onclick="다음(1,2);">{{ vote.0.choice_set.all.1 }}</button>
+                </div>
+                <input type="hidden" name="choice1" id="choice1" value="">
             </div>
 
-            <input type="hidden" name="choice3" id="choice3" value="">
-        </div>
+            <div class=question>
+                <!--2번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice2" id="3" value="3" onclick="다음(2,3);">{{ vote.1.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice2" id="4" value="4" onclick="다음(2,4);">{{ vote.1.choice_set.all.1 }}</button>                
+                </div>
 
-        <div class=question>
-            <!--4번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice4" id="7" value="7" onclick="다음(4,7);">{{ vote.3.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice4" id="8" value="8" onclick="다음(4,8);">{{ vote.3.choice_set.all.1 }}</button>                
+                <input type="hidden" name="choice2" id="choice2" value="">
             </div>
 
-            <input type="hidden" name="choice4" id="choice4" value="">
-        </div>
+            <div class=question>
+                <!--3번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice3" id="5" value="5" onclick="다음(3,5);">{{ vote.2.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice3" id="6" value="6" onclick="다음(3,6);">{{ vote.2.choice_set.all.1 }}</button>                
+                </div>
 
-        <div class=question>
-            <!--5번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice5" id="9" value="9" onclick="다음(5,9);">{{ vote.4.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice5" id="10" value="10" onclick="다음(5,10);">{{ vote.4.choice_set.all.1 }}</button>                
+                <input type="hidden" name="choice3" id="choice3" value="">
             </div>
 
-            <input type="hidden" name="choice5" id="choice5" value="">
-        </div>
+            <div class=question>
+                <!--4번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice4" id="7" value="7" onclick="다음(4,7);">{{ vote.3.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice4" id="8" value="8" onclick="다음(4,8);">{{ vote.3.choice_set.all.1 }}</button>                
+                </div>
 
-        <div class=question>
-            <!--6번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice6" id="11" value="11" onclick="다음(6,11);">{{ vote.5.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice6" id="12" value="12" onclick="다음(6,12);">{{ vote.5.choice_set.all.1 }}</button>                
+                <input type="hidden" name="choice4" id="choice4" value="">
             </div>
 
-            <input type="hidden" name="choice6" id="choice6" value="">
-        </div>
+            <div class=question>
+                <!--5번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice5" id="9" value="9" onclick="다음(5,9);">{{ vote.4.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice5" id="10" value="10" onclick="다음(5,10);">{{ vote.4.choice_set.all.1 }}</button>                
+                </div>
 
-        <div class=question>
-            <!--7번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice7" id="13" value="13" onclick="다음(7,13);">{{ vote.6.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice7" id="14" value="14" onclick="다음(7,14);">{{ vote.6.choice_set.all.1 }}</button>                
+                <input type="hidden" name="choice5" id="choice5" value="">
             </div>
 
-            <input type="hidden" name="choice7" id="choice7" value="">
-        </div>
+            <div class=question>
+                <!--6번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice6" id="11" value="11" onclick="다음(6,11);">{{ vote.5.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice6" id="12" value="12" onclick="다음(6,12);">{{ vote.5.choice_set.all.1 }}</button>                
+                </div>
 
-        <div class=question>
-            <!--8번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice8" id="15" value="15" onclick="다음(8,15);">{{ vote.7.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice8" id="16" value="16" onclick="다음(8,16);">{{ vote.7.choice_set.all.1 }}</button>                
+                <input type="hidden" name="choice6" id="choice6" value="">
             </div>
 
-            <input type="hidden" name="choice8" id="choice8" value="">
-        </div>
+            <div class=question>
+                <!--7번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice7" id="13" value="13" onclick="다음(7,13);">{{ vote.6.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice7" id="14" value="14" onclick="다음(7,14);">{{ vote.6.choice_set.all.1 }}</button>                
+                </div>
 
-        <div class=question>
-            <!--9번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice9" id="17" value="17" onclick="다음(9,17);">{{ vote.8.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice9" id="18" value="18" onclick="다음(9,18);">{{ vote.8.choice_set.all.1 }}</button>                
+                <input type="hidden" name="choice7" id="choice7" value="">
             </div>
 
-            <input type="hidden" name="choice9" id="choice9" value="">
-        </div>
+            <div class=question>
+                <!--8번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice8" id="15" value="15" onclick="다음(8,15);">{{ vote.7.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice8" id="16" value="16" onclick="다음(8,16);">{{ vote.7.choice_set.all.1 }}</button>                
+                </div>
 
-        <div class=question>
-            <!--10번 질문-->
-            <div class="vote">
-                <button class="vote_box1" type="button" name="choice10" id="19" value="19" onclick="다음(10,19);">{{ vote.9.choice_set.all.0 }}</button>
-                <p id="text_vs">VS</p>
-                <button class="vote_box2" type="button" name="choice10" id="20" value="20" onclick="다음(10,20);">{{ vote.9.choice_set.all.1 }}</button>                
+                <input type="hidden" name="choice8" id="choice8" value="">
             </div>
 
-            <input type="hidden" name="choice10" id="choice10" value="">
-            <div class="vote_done">
-                <input type="submit" value="결과보러가기" id="submit-btn" style="display:none;"/>               
+            <div class=question>
+                <!--9번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice9" id="17" value="17" onclick="다음(9,17);">{{ vote.8.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice9" id="18" value="18" onclick="다음(9,18);">{{ vote.8.choice_set.all.1 }}</button>                
+                </div>
+
+                <input type="hidden" name="choice9" id="choice9" value="">
             </div>
-        </div>
-        <div class = "ad1" style="text-align: center;">
-            <ins class="kakao_ad_area" style="display:block;" 
-         data-ad-unit    = "DAN-K1ONl6gS9BoFHEkW" 
-         data-ad-width   = "320" 
-         data-ad-height  = "50"></ins> 
-        
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        </div>
 
-        <div class="ad3" style="text-align: center;">
-            <ins class="kakao_ad_area" style="display:none;" 
-         data-ad-unit    = "DAN-nHZsneVl5QJNXG3H" 
-         data-ad-width   = "728" 
-         data-ad-height  = "90"></ins> 
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        </div>
+            <div class=question>
+                <!--10번 질문-->
+                <div class="vote">
+                    <button class="vote_box1" type="button" name="choice10" id="19" value="19" onclick="다음(10,19);">{{ vote.9.choice_set.all.0 }}</button>
+                    <p id="text_vs">VS</p>
+                    <button class="vote_box2" type="button" name="choice10" id="20" value="20" onclick="다음(10,20);">{{ vote.9.choice_set.all.1 }}</button>                
+                </div>
 
-        <div class="ad2" style="text-align: center;">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7779512750803803"
-             crossorigin="anonymous"></script>
-        </div>
-    </form>
+                <input type="hidden" name="choice10" id="choice10" value="">
+                <div class="vote_done">
+                    <input type="submit" value="결과보러가기" id="submit-btn" style="display:none;"/>               
+                </div>
+            </div>
 
+        </form>
+
+        <footer>
+            <div class = "ad1" style="text-align: center;">
+                <ins class="kakao_ad_area" style="display:block;" 
+            data-ad-unit    = "DAN-K1ONl6gS9BoFHEkW" 
+            data-ad-width   = "320" 
+            data-ad-height  = "50"></ins> 
+            
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+            </div>
+        </footer>
+    
+    </html>
     <script>
         function 다음(num, choice) {
             if (num < 10){
@@ -192,4 +186,4 @@
 
          /////////////////////////////////////////////////
 
-        </script>
+    </script>
