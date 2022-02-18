@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="{% static 'css/vote_result.css'%}"/>
     <link href="static/css/style.css" type="text/css" rel="stylesheet">  
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-    <script src="{% static 'js/html2canvas.js' %}"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 
@@ -17,8 +16,7 @@
         </a>
     </div>
     
-    <!-- myresult 안의 영역이 결과화면 이미지로 변환됨 -->
-    <div class="result-box" id="myresult">
+    <div class="result-box">
         <div class="vote-text">
             나의 결과는...
         </div>
@@ -126,7 +124,6 @@
             <a id="btnTwitter" class="link-icon twitter" href="javascript:shareTwitter();"><img src="{% static 'images/twitter.png' %}" width="50px"; height="50px"; ></a>
             <a id="btnFacebook" class="link-icon facebook" href="javascript:shareFacebook();"><img src="{% static 'images/facebook.png' %}" width="50px"; height="50px"; ></a>    
             <a id="btnKakao" class="link-icon kakao" href="javascript:shareKakao();"><img src="{% static 'images/kakao.png' %}" width="50px"; height="50px"; ></a>  
-            <a class="hover" href='javascript:void(0);' onclick="PrintDiv($('#myresult'));"><img src="{% static 'images/download.png' %}" width="50px"; height="50px"; ></a>
         </div>
     <div class="now-voting">
         ________________________________________________<br><br>
@@ -193,23 +190,7 @@
          }
        }
      });
-    }
-
-    function PrintDiv(div){
-        div = div[0]
-        html2canvas(div).then(function(canvas){
-            var myImage = canvas.toDataURL();
-            downloadURI(myImage, "전국민대결끝판왕.png") // 저장될 사진명
-        });
-    }
-
-    function downloadURI(uri, name){
-        var link = document.createElement("a")
-        link.download = name;
-        link.href = uri;
-        document.body.appendChild(link);
-        link.click();
-    }       
+    }  
     
     
     function setCookie( name, value, expiredays ) {
@@ -224,8 +205,6 @@
         setCookie("isVoted", 'true', 1)
     
     </script>
-
-
 
 
 </body>
