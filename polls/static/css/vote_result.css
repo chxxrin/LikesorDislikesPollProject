@@ -14,8 +14,7 @@ body {
     height: 340px;
 }
 .result-box {
-    background-color: #626262;
-    font-size: 24px;
+    background-color: #A4A4A4;
     border-radius: 30px;
     text-align: center;
     margin: 50px;
@@ -29,7 +28,7 @@ body {
 
 .my-vote {
     font-size: 18px;
-    background-color: #626262;
+    background-color: #A4A4A4;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
     border-radius: 30px;
     margin: 50px;
@@ -39,6 +38,7 @@ body {
 .vote-text {
     font-size: 25px;
     text-align: center;
+    color: #424141;
 }
 
 .my-vote-items {
@@ -49,13 +49,41 @@ body {
 .sns-share {
     text-align: center;
 }
-
+.sns-share-text {
+    text-align: center;
+    color: #faff00;
+}
 .now-voting {
     text-align: center;
+    color: #faff00;
 }
 .now-voting a {
     text-decoration: none;
     color: black;
     font-size: 18px;
     text-align: center;
+}
+.character-name{
+    font-size: 35px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 5%;
+    line-height: 2;
+}
+.unique {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+    margin: 2%;
+}
+
+.my-choice {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+.text-num{
+    background-color: #faff00;
 }
