@@ -27,7 +27,11 @@ body {
     background-color: black;
     font-family: 'S-CoreDream-6Bold';
 }
-
+footer {
+    height: 50px;
+    width: 100%;
+    margin-top: -50px;
+}
 .logo{
     animation-name: bomb;
     animation-duration: 1s;
