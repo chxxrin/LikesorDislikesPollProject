@@ -8,7 +8,18 @@
 * {
     font-family: 'S-CoreDream-6Bold';
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
+form{
+    padding: 20px;
+}
+
+footer{
+    margin-top: 20%;
+}
 .logo {
     padding: 3%;
 }
