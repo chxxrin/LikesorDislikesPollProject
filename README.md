@@ -27,8 +27,9 @@
 ![](https://images.velog.io/images/myway00/post/75966ab6-dbd7-41ed-9ad1-b5ed5b0b20b2/image.png)
 - 투표 후
 ![](https://images.velog.io/images/myway00/post/a29213cb-3f8d-4c8b-9229-630d517f00f3/image.png)
+
 # 3. 후 방향
-- `아마존 웹 서비스를 다루는 기술` 책을 통해 아마존 서비스 발전시키기
+- 아마존 서비스 발전시키기
 
 - 사용자 로그 분석
 
