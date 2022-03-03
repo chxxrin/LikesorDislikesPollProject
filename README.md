@@ -5,8 +5,7 @@
 - 배포 서버 - aws
 - 광고 - 카카오 애드핏
 
-![]
-(https://images.velog.io/images/myway00/post/0338bf90-2e32-4ce7-8fdb-bce57ccdc66e/%EB%85%B9%ED%99%94_2022_02_27_01_01_41_870.gif)
+![](https://images.velog.io/images/myway00/post/0338bf90-2e32-4ce7-8fdb-bce57ccdc66e/%EB%85%B9%ED%99%94_2022_02_27_01_01_41_870.gif)
 
 - 배포 직전에 디자인을 다크모드로 수정했는데 훨씬 결과가 이쁘고 선명하게 나와서 기분이 뿌듯했다.
 
