@@ -1,4 +1,49 @@
 
+# 1. 사이트 주소
+> [http://likesordislikes.me/](http://likesordislikes.me/)
+- 도메인 [깃허브 무료 도메인](https://education.github.com/pack)
+- 배포 서버 - aws
+- 광고 - 카카오 애드핏
+
+![]
+(https://images.velog.io/images/myway00/post/0338bf90-2e32-4ce7-8fdb-bce57ccdc66e/%EB%85%B9%ED%99%94_2022_02_27_01_01_41_870.gif)
+
+- 배포 직전에 디자인을 다크모드로 수정했는데 훨씬 결과가 이쁘고 선명하게 나와서 기분이 뿌듯했다.
+
+
+# 2. 주요 기능
+- 투표하기
+- 투표 결과에 따른 캐릭터 유형 출력, 현재 투표수가 더 많은 항목은 별개로 표시
+- 투표 결과 sns 공유 가능
+- 실시간 투표율 확인 가능
+
+![](https://images.velog.io/images/myway00/post/0104bbc3-469b-45a2-a3a3-a32ef926bf38/%EB%85%B9%ED%99%94_2022_02_27_01_03_32_192.gif)
+
+![](https://images.velog.io/images/myway00/post/246b00d3-0ac9-4957-b36d-4c76320a717b/%EB%85%B9%ED%99%94_2022_02_27_01_07_33_787.gif)
+
+- 공정 + 객관적 투표를 위해서 투표는 하루 한번 제한
+=> 투표 완료하면 쿠키가 생성됨, 해당 쿠키는 24시간 존재해서 하루동안 투표 불가하게 함
+
+- 투표 전
+![](https://images.velog.io/images/myway00/post/75966ab6-dbd7-41ed-9ad1-b5ed5b0b20b2/image.png)
+- 투표 후
+![](https://images.velog.io/images/myway00/post/a29213cb-3f8d-4c8b-9229-630d517f00f3/image.png)
+# 3. 후 방향
+- `아마존 웹 서비스를 다루는 기술` 책을 통해 아마존 서비스 발전시키기
+
+- 사용자 로그 분석
+
+- 구글 애널리틱스 적용하기
+
+- ci, cd 적용
+
+# 4. 회고
+
+- 부담없이 참여한 프로젝트였지만 쿠키 사용해보기, 배포, 광고 붙이기 라는 새로운 경험을 할 수 있어서 무척 가슴 뛰는 경험이었다. 
+
+- 게다가 광고 수익도 짭짤해서 기분이 좋다 ^^ 
+
+____________________________________________________________________________________________________________________
 # 클론 받기 & 실행하기
 1) git clone -b dev https://github.com/LikelionSideProj/vs
 2) cd vs
